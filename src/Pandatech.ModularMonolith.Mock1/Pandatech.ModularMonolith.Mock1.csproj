@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+   <PropertyGroup>
+      <TargetFramework>net8.0</TargetFramework>
+      <ImplicitUsings>enable</ImplicitUsings>
+      <Nullable>enable</Nullable>
+      <RootNamespace>FinHub.Mock1</RootNamespace>
+   </PropertyGroup>
+
+   <ItemGroup>
+      <ProjectReference Include="..\Pandatech.ModularMonolith.Mock1.Integration\Pandatech.ModularMonolith.Mock1.Integration.csproj" />
+      <ProjectReference Include="..\Pandatech.ModularMonolith.Scheduler.Integration\Pandatech.ModularMonolith.Scheduler.Integration.csproj" />
+   </ItemGroup>
+
+   <ItemGroup>
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.3">
+         <PrivateAssets>all</PrivateAssets>
+         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+   </ItemGroup>
+
+</Project>

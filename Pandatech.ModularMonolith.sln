@@ -1,0 +1,116 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34622.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pandatech.ModularMonolith.ApiGateway", "src\Pandatech.ModularMonolith.ApiGateway\Pandatech.ModularMonolith.ApiGateway.csproj", "{197CA2C3-233A-4273-8890-D62408158786}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DFC61897-8F22-425A-9740-2D426C018AA6}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitignore = .gitignore
+		Directory.Build.props = Directory.Build.props
+		docker-compose.yml = docker-compose.yml
+		Dockerfile = Dockerfile
+		Dockerfile.Local = Dockerfile.Local
+		global.json = global.json
+		nuget.config = nuget.config
+		Readme.md = Readme.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{DE03CA08-9CA9-42B7-BB83-C06F50D84FEC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{09758D87-6826-43D9-B0E1-905F101F302F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pandatech.ModularMonolith.SharedKernel", "src\Pandatech.ModularMonolith.SharedKernel\Pandatech.ModularMonolith.SharedKernel.csproj", "{24E656C8-8C88-4F3F-9814-4E84669F6990}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pandatech.ModularMonolith.E2ETests", "test\Pandatech.ModularMonolith.E2ETests\Pandatech.ModularMonolith.E2ETests.csproj", "{AE830FEB-11C4-4DE5-A023-70CC39848493}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{498195A9-6CC0-4BA2-809E-58EA926D1AEA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scheduler", "Scheduler", "{67C128F6-6ECF-49D7-91CE-8BB0515D07E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pandatech.ModularMonolith.Scheduler", "src\Pandatech.ModularMonolith.Scheduler\Pandatech.ModularMonolith.Scheduler.csproj", "{CC9A52DC-B2A7-4334-BF20-BB441FC86905}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pandatech.ModularMonolith.Scheduler.Integration", "src\Pandatech.ModularMonolith.Scheduler.Integration\Pandatech.ModularMonolith.Scheduler.Integration.csproj", "{4BDBE62B-EA4E-4020-A442-5B178BB29EC7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Notification", "Notification", "{2B781583-042D-4CE8-B220-1570F20B6BD1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pandatech.ModularMonolith.Mock1", "src\Pandatech.ModularMonolith.Mock1\Pandatech.ModularMonolith.Mock1.csproj", "{1F479997-4C3D-49F0-8EED-E89F5F001B47}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pandatech.ModularMonolith.Mock1.Integration", "src\Pandatech.ModularMonolith.Mock1.Integration\Pandatech.ModularMonolith.Mock1.Integration.csproj", "{B00AA69B-6D2F-4220-AF30-4FE9B0BDFA91}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pandatech.ModularMonolith.Mock2", "src\Pandatech.ModularMonolith.Mock2\Pandatech.ModularMonolith.Mock2.csproj", "{BD76CACD-2C27-4BDC-B93B-00A679406809}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pandatech.ModularMonolith.Mock2.Integration", "src\Pandatech.ModularMonolith.Mock2.Integration\Pandatech.ModularMonolith.Mock2.Integration.csproj", "{2E0A2E3A-0B74-483D-96A0-C8C89F05A568}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mock1", "Mock1", "{2A8E0B7B-C8D0-4260-BC05-C16280CD0734}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mock2", "Mock2", "{2262AA02-6594-42F2-A039-2A05715DEBAC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{197CA2C3-233A-4273-8890-D62408158786}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{197CA2C3-233A-4273-8890-D62408158786}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{197CA2C3-233A-4273-8890-D62408158786}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{197CA2C3-233A-4273-8890-D62408158786}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24E656C8-8C88-4F3F-9814-4E84669F6990}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24E656C8-8C88-4F3F-9814-4E84669F6990}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24E656C8-8C88-4F3F-9814-4E84669F6990}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24E656C8-8C88-4F3F-9814-4E84669F6990}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE830FEB-11C4-4DE5-A023-70CC39848493}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE830FEB-11C4-4DE5-A023-70CC39848493}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE830FEB-11C4-4DE5-A023-70CC39848493}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE830FEB-11C4-4DE5-A023-70CC39848493}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC9A52DC-B2A7-4334-BF20-BB441FC86905}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC9A52DC-B2A7-4334-BF20-BB441FC86905}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC9A52DC-B2A7-4334-BF20-BB441FC86905}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC9A52DC-B2A7-4334-BF20-BB441FC86905}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BDBE62B-EA4E-4020-A442-5B178BB29EC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BDBE62B-EA4E-4020-A442-5B178BB29EC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BDBE62B-EA4E-4020-A442-5B178BB29EC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BDBE62B-EA4E-4020-A442-5B178BB29EC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F479997-4C3D-49F0-8EED-E89F5F001B47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F479997-4C3D-49F0-8EED-E89F5F001B47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F479997-4C3D-49F0-8EED-E89F5F001B47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F479997-4C3D-49F0-8EED-E89F5F001B47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B00AA69B-6D2F-4220-AF30-4FE9B0BDFA91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B00AA69B-6D2F-4220-AF30-4FE9B0BDFA91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B00AA69B-6D2F-4220-AF30-4FE9B0BDFA91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B00AA69B-6D2F-4220-AF30-4FE9B0BDFA91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD76CACD-2C27-4BDC-B93B-00A679406809}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD76CACD-2C27-4BDC-B93B-00A679406809}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD76CACD-2C27-4BDC-B93B-00A679406809}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD76CACD-2C27-4BDC-B93B-00A679406809}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E0A2E3A-0B74-483D-96A0-C8C89F05A568}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E0A2E3A-0B74-483D-96A0-C8C89F05A568}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E0A2E3A-0B74-483D-96A0-C8C89F05A568}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E0A2E3A-0B74-483D-96A0-C8C89F05A568}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {27493F34-D35B-4975-9D84-FA1B46F24D9C}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{197CA2C3-233A-4273-8890-D62408158786} = {DE03CA08-9CA9-42B7-BB83-C06F50D84FEC}
+		{24E656C8-8C88-4F3F-9814-4E84669F6990} = {DE03CA08-9CA9-42B7-BB83-C06F50D84FEC}
+		{AE830FEB-11C4-4DE5-A023-70CC39848493} = {09758D87-6826-43D9-B0E1-905F101F302F}
+		{498195A9-6CC0-4BA2-809E-58EA926D1AEA} = {DE03CA08-9CA9-42B7-BB83-C06F50D84FEC}
+		{67C128F6-6ECF-49D7-91CE-8BB0515D07E2} = {498195A9-6CC0-4BA2-809E-58EA926D1AEA}
+		{CC9A52DC-B2A7-4334-BF20-BB441FC86905} = {67C128F6-6ECF-49D7-91CE-8BB0515D07E2}
+		{4BDBE62B-EA4E-4020-A442-5B178BB29EC7} = {67C128F6-6ECF-49D7-91CE-8BB0515D07E2}
+		{2B781583-042D-4CE8-B220-1570F20B6BD1} = {498195A9-6CC0-4BA2-809E-58EA926D1AEA}
+		{2A8E0B7B-C8D0-4260-BC05-C16280CD0734} = {498195A9-6CC0-4BA2-809E-58EA926D1AEA}
+		{2262AA02-6594-42F2-A039-2A05715DEBAC} = {498195A9-6CC0-4BA2-809E-58EA926D1AEA}
+		{1F479997-4C3D-49F0-8EED-E89F5F001B47} = {2A8E0B7B-C8D0-4260-BC05-C16280CD0734}
+		{B00AA69B-6D2F-4220-AF30-4FE9B0BDFA91} = {2A8E0B7B-C8D0-4260-BC05-C16280CD0734}
+		{BD76CACD-2C27-4BDC-B93B-00A679406809} = {2262AA02-6594-42F2-A039-2A05715DEBAC}
+		{2E0A2E3A-0B74-483D-96A0-C8C89F05A568} = {2262AA02-6594-42F2-A039-2A05715DEBAC}
+	EndGlobalSection
+EndGlobal

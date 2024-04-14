@@ -1,0 +1,30 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: be-ft-finhub-tls
+  namespace: dev
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/backend-protocol: HTTP
+    nginx.ingress.kubernetes.io/ssl-redirect: 'false'
+    nginx.ingress.kubernetes.io/whitelist-source-range: >-
+      10.113.0.0/24, 10.0.8.0/24, 10.0.9.0/24, 10.103.0.0/24, 10.121.0.0/24,
+      10.124.0.0/24, 10.120.0.0/24, 10.106.0.0/24, 10.105.0.0/24,
+      198.168.68.0/22, 37.186.112.145, 37.157.214.85, 195.250.87.195,
+      10.122.0.0/16
+spec:
+  tls:
+    - hosts:
+        - finhub.pandatech.it
+      secretName: easypay-certs
+  rules:
+    - host: finhub.pandatech.it
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: be-ft-finhub-service
+                port:
+                  number: 443

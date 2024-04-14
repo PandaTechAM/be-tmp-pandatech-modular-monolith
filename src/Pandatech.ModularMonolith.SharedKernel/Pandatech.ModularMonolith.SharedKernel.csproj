@@ -1,0 +1,61 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+
+   <PropertyGroup>
+     <RootNamespace>FinHub.SharedKernel</RootNamespace>
+   </PropertyGroup>
+
+
+   <ItemGroup>
+      <PackageReference Include="AspNetCore.HealthChecks.Elasticsearch" Version="8.0.1"/>
+      <PackageReference Include="AspNetCore.HealthChecks.NpgSql" Version="8.0.1"/>
+      <PackageReference Include="AspNetCore.HealthChecks.Prometheus.Metrics" Version="8.0.1"/>
+      <PackageReference Include="AspNetCore.HealthChecks.Rabbitmq" Version="8.0.1"/>
+      <PackageReference Include="AspNetCore.HealthChecks.Redis" Version="8.0.1"/>
+      <PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="8.0.1"/>
+      <PackageReference Include="EFCore.NamingConventions" Version="8.0.3"/>
+      <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0"/>
+      <PackageReference Include="MassTransit.RabbitMQ" Version="8.2.0"/>
+      <PackageReference Include="MediatR" Version="12.2.0"/>
+      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.3"/>
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.3">
+         <PrivateAssets>all</PrivateAssets>
+         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="8.0.3"/>
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.3">
+         <PrivateAssets>all</PrivateAssets>
+         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.3"/>
+      <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.2"/>
+      <PackageReference Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.8.0"/>
+      <PackageReference Include="OpenTelemetry.Exporter.Prometheus.AspNetCore" Version="1.7.0-rc.1"/>
+      <PackageReference Include="OpenTelemetry.Extensions.Hosting" Version="1.8.0"/>
+      <PackageReference Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.8.0"/>
+      <PackageReference Include="OpenTelemetry.Instrumentation.GrpcNetClient" Version="1.7.0-beta.1"/>
+      <PackageReference Include="OpenTelemetry.Instrumentation.Http" Version="1.8.0"/>
+      <PackageReference Include="OpenTelemetry.Instrumentation.Runtime" Version="1.8.0"/>
+      <PackageReference Include="PandaTech.BaseConverter" Version="3.0.3"/>
+      <PackageReference Include="Pandatech.Crypto" Version="2.3.1"/>
+      <PackageReference Include="Pandatech.EFCore.PostgresExtensions" Version="1.0.0"/>
+      <PackageReference Include="Pandatech.FluentMinimalApiMapper" Version="1.1.0"/>
+
+      <PackageReference Include="PandaTech.IEnumerableFilters" Version="4.0.21"/>
+
+      <PackageReference Include="Pandatech.MassTransit.PostgresOutbox" Version="1.0.4"/>
+      <PackageReference Include="Pandatech.PandaVaultClient" Version="3.1.0"/>
+      <PackageReference Include="Pandatech.RegexBox" Version="1.2.4"/>
+      <PackageReference Include="Pandatech.ResponseCrafter" Version="1.2.1"/>
+      <PackageReference Include="Serilog.AspNetCore" Version="8.0.1"/>
+      <PackageReference Include="Serilog.Enrichers.Environment" Version="2.3.0"/>
+      <PackageReference Include="Serilog.Sinks.Elasticsearch" Version="10.0.0"/>
+      <PackageReference Include="SonarAnalyzer.CSharp" Version="9.23.1.88495">
+         <PrivateAssets>all</PrivateAssets>
+         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+      <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0"/>
+   </ItemGroup>
+
+
+</Project>
