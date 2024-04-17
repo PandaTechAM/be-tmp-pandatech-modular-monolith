@@ -1,8 +1,8 @@
 using FinHub.ApiGateway.Extensions;
-using FinHub.SharedKernel.Extensions;
-using FinHub.SharedKernel.Helpers;
-using FinHub.SharedKernel.SharedEndpoints;
 using FluentMinimalApiMapper;
+using Pandatech.ModularMonolith.SharedKernel.Extensions;
+using Pandatech.ModularMonolith.SharedKernel.Helpers;
+using Pandatech.ModularMonolith.SharedKernel.SharedEndpoints;
 using PandaVaultClient;
 using ResponseCrafter;
 
@@ -17,6 +17,7 @@ if (!builder.Environment.IsLocal())
 }
 
 builder
+   .AddResponseCrafter()
    .AddSerilog()
    .RegisterModules()
    .AddCors()

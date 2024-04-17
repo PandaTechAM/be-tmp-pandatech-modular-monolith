@@ -3,7 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using ResponseCrafter.StandardHttpExceptions;
 
-namespace FinHub.SharedKernel.Extensions;
+namespace Pandatech.ModularMonolith.SharedKernel.Extensions;
 
 public static class HealthCheckRunnerExtensions
 {

@@ -2,9 +2,9 @@ using FinHub.Mock1.Context;
 using FinHub.Mock1.Entities;
 using FinHub.Mock1.Enums;
 using FinHub.Mock1.Integration;
-using FinHub.SharedKernel.Interfaces;
 using MassTransit;
 using MassTransit.PostgresOutbox.Extensions;
+using Pandatech.ModularMonolith.SharedKernel.Interfaces;
 
 namespace FinHub.Mock1.Features.Create;
 

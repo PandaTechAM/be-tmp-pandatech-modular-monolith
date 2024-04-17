@@ -1,13 +1,13 @@
-﻿using FinHub.SharedKernel.Helpers;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Pandatech.ModularMonolith.SharedKernel.Helpers;
 using Serilog;
 using Serilog.Events;
 
-namespace FinHub.SharedKernel.Extensions;
+namespace Pandatech.ModularMonolith.SharedKernel.Extensions;
 
 public static class SerilogExtension
 {

@@ -1,11 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 
-   <PropertyGroup>
-     <RootNamespace>FinHub.SharedKernel</RootNamespace>
-   </PropertyGroup>
-
-
    <ItemGroup>
       <PackageReference Include="AspNetCore.HealthChecks.Elasticsearch" Version="8.0.1"/>
       <PackageReference Include="AspNetCore.HealthChecks.NpgSql" Version="8.0.1"/>

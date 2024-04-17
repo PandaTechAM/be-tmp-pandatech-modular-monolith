@@ -1,10 +1,10 @@
 using BaseConverter;
-using FinHub.SharedKernel.Helpers;
 using Microsoft.AspNetCore.Builder;
 using Pandatech.Crypto;
 using PandaTech.IEnumerableFilters.Extensions;
+using Pandatech.ModularMonolith.SharedKernel.Helpers;
 
-namespace FinHub.SharedKernel.Extensions;
+namespace Pandatech.ModularMonolith.SharedKernel.Extensions;
 
 public static class CryptoExtensions
 {

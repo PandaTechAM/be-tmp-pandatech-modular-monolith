@@ -4,7 +4,7 @@ using MediatR;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace FinHub.SharedKernel.Behaviors;
+namespace Pandatech.ModularMonolith.SharedKernel.Behaviors;
 
 public class LoggingBehavior<TRequest, TResponse>(ILogger<Mediator> logger, IHostEnvironment environment)
    : IPipelineBehavior<TRequest, TResponse>

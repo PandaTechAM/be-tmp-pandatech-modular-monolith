@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Hosting;
 
-namespace FinHub.SharedKernel.Extensions;
+namespace Pandatech.ModularMonolith.SharedKernel.Extensions;
 
 public static class HostEnvironmentExtensions
 {

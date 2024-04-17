@@ -2,7 +2,7 @@ using FluentValidation;
 using MediatR;
 using ResponseCrafter.StandardHttpExceptions;
 
-namespace FinHub.SharedKernel.Behaviors;
+namespace Pandatech.ModularMonolith.SharedKernel.Behaviors;
 
 public class ValidationBehaviorWithoutResponse<TRequest, TResponse>(IEnumerable<IValidator<TRequest>> validators)
    : IPipelineBehavior<TRequest, TResponse>

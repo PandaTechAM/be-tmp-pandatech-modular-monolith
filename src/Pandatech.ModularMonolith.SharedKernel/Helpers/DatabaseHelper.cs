@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace FinHub.SharedKernel.Helpers;
+namespace Pandatech.ModularMonolith.SharedKernel.Helpers;
 
 public class DatabaseHelper(IServiceProvider serviceProvider)
 {

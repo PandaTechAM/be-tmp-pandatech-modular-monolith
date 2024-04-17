@@ -1,10 +1,10 @@
 using System.Reflection;
-using FinHub.SharedKernel.Helpers;
 using MassTransit;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
+using Pandatech.ModularMonolith.SharedKernel.Helpers;
 
-namespace FinHub.SharedKernel.Extensions;
+namespace Pandatech.ModularMonolith.SharedKernel.Extensions;
 
 public static class MassTransitExtension
 {

@@ -1,4 +1,4 @@
-namespace FinHub.SharedKernel.Helpers;
+namespace Pandatech.ModularMonolith.SharedKernel.Helpers;
 
 public static class ApiHelper
 {

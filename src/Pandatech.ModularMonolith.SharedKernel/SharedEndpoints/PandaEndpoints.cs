@@ -1,14 +1,14 @@
 ﻿using System.Net;
-using FinHub.SharedKernel.Helpers;
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Hosting;
+using Pandatech.ModularMonolith.SharedKernel.Helpers;
 using PandaVaultClient;
 
-namespace FinHub.SharedKernel.SharedEndpoints;
+namespace Pandatech.ModularMonolith.SharedKernel.SharedEndpoints;
 
 public static class PandaEndpoints
 {

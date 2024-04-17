@@ -1,6 +1,6 @@
 using MediatR;
 
-namespace FinHub.SharedKernel.Interfaces;
+namespace Pandatech.ModularMonolith.SharedKernel.Interfaces;
 
 public interface ICommand<out TResponse> : IRequest<TResponse>;
 

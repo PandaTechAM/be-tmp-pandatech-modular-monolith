@@ -1,4 +1,4 @@
-﻿using FinHub.SharedKernel.Interfaces;
+﻿using Pandatech.ModularMonolith.SharedKernel.Interfaces;
 
 namespace FinHub.Mock1.Features.Update;
 

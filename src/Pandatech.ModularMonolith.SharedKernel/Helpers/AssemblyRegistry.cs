@@ -1,6 +1,6 @@
 using System.Reflection;
 
-namespace FinHub.SharedKernel.Helpers;
+namespace Pandatech.ModularMonolith.SharedKernel.Helpers;
 
 public static class AssemblyRegistry
 {

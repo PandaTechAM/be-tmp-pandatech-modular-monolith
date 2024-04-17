@@ -1,9 +1,9 @@
 using FinHub.Mock1;
 using FinHub.Mock2;
 using Pandatech.ModularMonolith.Scheduler;
-using FinHub.SharedKernel.Extensions;
-using FinHub.SharedKernel.Helpers;
 using FluentMinimalApiMapper;
+using Pandatech.ModularMonolith.SharedKernel.Extensions;
+using Pandatech.ModularMonolith.SharedKernel.Helpers;
 
 namespace FinHub.ApiGateway.Extensions;
 

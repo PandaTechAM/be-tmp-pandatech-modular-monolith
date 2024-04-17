@@ -1,13 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-   <PropertyGroup>
-      <TargetFramework>net8.0</TargetFramework>
-      <ImplicitUsings>enable</ImplicitUsings>
-      <Nullable>enable</Nullable>
-      <RootNamespace>FinHub.Mock2</RootNamespace>
-   </PropertyGroup>
-
-   <ItemGroup>
+     <ItemGroup>
       <ProjectReference Include="..\Pandatech.ModularMonolith.Mock1.Integration\Pandatech.ModularMonolith.Mock1.Integration.csproj" />
       <ProjectReference Include="..\Pandatech.ModularMonolith.Mock2.Integration\Pandatech.ModularMonolith.Mock2.Integration.csproj" />
    </ItemGroup>

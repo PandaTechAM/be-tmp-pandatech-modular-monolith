@@ -15,7 +15,7 @@ public static class HealthCheckExtension
 
       builder.Services
          .AddHealthChecks()
-         .AddNpgSql(postgresConnectionString, timeout: timeoutSeconds, name: "postgres_finhub_scheduler");
+         .AddNpgSql(postgresConnectionString, timeout: timeoutSeconds, name: "postgres_pandatech_modular_monolith_scheduler");
 
       return builder;
    }

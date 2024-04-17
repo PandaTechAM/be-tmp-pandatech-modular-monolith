@@ -1,11 +1,11 @@
 using System.Reflection;
-using FinHub.SharedKernel.Behaviors;
 using FluentValidation;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
+using Pandatech.ModularMonolith.SharedKernel.Behaviors;
 
-namespace FinHub.SharedKernel.Extensions;
+namespace Pandatech.ModularMonolith.SharedKernel.Extensions;
 
 public static class MediatrExtension
 {

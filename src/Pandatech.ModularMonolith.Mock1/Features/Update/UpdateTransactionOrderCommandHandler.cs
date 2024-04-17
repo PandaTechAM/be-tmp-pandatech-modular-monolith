@@ -2,9 +2,9 @@
 using EFCore.PostgresExtensions.Extensions;
 using FinHub.Mock1.Context;
 using FinHub.Mock1.Enums;
-using FinHub.SharedKernel.Interfaces;
 using MassTransit;
 using Microsoft.EntityFrameworkCore;
+using Pandatech.ModularMonolith.SharedKernel.Interfaces;
 
 namespace FinHub.Mock1.Features.Update;
 

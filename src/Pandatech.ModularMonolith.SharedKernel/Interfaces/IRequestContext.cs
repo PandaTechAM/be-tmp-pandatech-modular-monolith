@@ -1,4 +1,4 @@
-﻿namespace FinHub.SharedKernel.Interfaces;
+﻿namespace Pandatech.ModularMonolith.SharedKernel.Interfaces;
 
 public interface IRequestContext //todo this is for auth module
 {

@@ -1,6 +1,6 @@
 using FinHub.Mock2.Context;
 using FinHub.Mock2.Entities;
-using FinHub.SharedKernel.Interfaces;
+using Pandatech.ModularMonolith.SharedKernel.Interfaces;
 using ResponseCrafter.StandardHttpExceptions;
 
 namespace FinHub.Mock2.Features;

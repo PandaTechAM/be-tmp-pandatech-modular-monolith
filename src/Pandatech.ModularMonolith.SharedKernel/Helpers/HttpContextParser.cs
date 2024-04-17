@@ -2,7 +2,7 @@ using System.Net;
 using System.Text;
 using Microsoft.AspNetCore.Http;
 
-namespace FinHub.SharedKernel.Helpers;
+namespace Pandatech.ModularMonolith.SharedKernel.Helpers;
 
 public static class HttpContextParser
 {

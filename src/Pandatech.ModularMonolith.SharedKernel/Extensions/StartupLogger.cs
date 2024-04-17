@@ -3,7 +3,7 @@ using System.Globalization;
 using Microsoft.AspNetCore.Builder;
 using Newtonsoft.Json;
 
-namespace FinHub.SharedKernel.Extensions;
+namespace Pandatech.ModularMonolith.SharedKernel.Extensions;
 
 public static class StartupLogger
 {
