@@ -27,13 +27,13 @@ public class TransactionEndpoints : IEndpoint
       groupApp.MapPost("", async ([FromServices] ISender sender) =>
       {
          await sender.Send(new CreateTransactionOrderCommand());
-         return Results.Ok();
+         return TypedResults.Ok();
       });
 
       groupApp.MapPut("{id}", async ([FromRoute] long id, [FromServices] ISender sender) =>
       {
          await sender.Send(new UpdateTransactionOrderCommand { Id = id });
-         return Results.Ok();
+         return TypedResults.Ok();
       });
    }
 }

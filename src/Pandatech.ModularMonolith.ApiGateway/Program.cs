@@ -47,3 +47,8 @@ app.MapEndpoints();
 
 StartupLogger.LogStartSuccess();
 app.Run();
+
+namespace Pandatech.ModularMonolith.ApiGateway
+{
+   public partial class Program;
+}
