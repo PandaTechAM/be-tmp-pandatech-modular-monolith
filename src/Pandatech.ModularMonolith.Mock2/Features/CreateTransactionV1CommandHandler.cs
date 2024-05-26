@@ -1,9 +1,9 @@
-using FinHub.Mock2.Context;
-using FinHub.Mock2.Entities;
+using Pandatech.ModularMonolith.Mock2.Context;
+using Pandatech.ModularMonolith.Mock2.Entities;
 using Pandatech.ModularMonolith.SharedKernel.Interfaces;
-using ResponseCrafter.StandardHttpExceptions;
+using ResponseCrafter.HttpExceptions;
 
-namespace FinHub.Mock2.Features;
+namespace Pandatech.ModularMonolith.Mock2.Features;
 
 public class CreateTransactionV1CommandHandler(PostgresContext postgresContext)
    : ICommandHandler<CreateTransactionV1Command>

@@ -1,8 +1,8 @@
-using FinHub.Mock2.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Pandatech.ModularMonolith.Mock2.Entities;
 
-namespace FinHub.Mock2.Context.EntityConfigurations;
+namespace Pandatech.ModularMonolith.Mock2.Context.EntityConfigurations;
 
 public class TransactionEntityConfiguration : IEntityTypeConfiguration<TransactionEntity>
 {

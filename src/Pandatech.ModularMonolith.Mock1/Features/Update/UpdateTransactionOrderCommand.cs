@@ -1,6 +1,6 @@
 ﻿using Pandatech.ModularMonolith.SharedKernel.Interfaces;
 
-namespace FinHub.Mock1.Features.Update;
+namespace Pandatech.ModularMonolith.Mock1.Features.Update;
 
 public class UpdateTransactionOrderCommand : ICommand
 {

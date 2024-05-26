@@ -1,6 +1,6 @@
-using FinHub.Mock1.Enums;
+using Pandatech.ModularMonolith.Mock1.Enums;
 
-namespace FinHub.Mock1.Entities;
+namespace Pandatech.ModularMonolith.Mock1.Entities;
 
 public class TransactionOrderEntity
 {

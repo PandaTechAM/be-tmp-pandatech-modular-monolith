@@ -1,10 +1,10 @@
-using FinHub.Mock1.Integration;
-using FinHub.Mock2.Context;
 using MassTransit.PostgresOutbox.Abstractions;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
+using Pandatech.ModularMonolith.Mock1.Integration;
+using Pandatech.ModularMonolith.Mock2.Context;
 
-namespace FinHub.Mock2.Features;
+namespace Pandatech.ModularMonolith.Mock2.Features;
 
 public class TransactionOrderConsumer(ISender sender, IServiceScopeFactory serviceScopeFactory)
    : InboxConsumer<TransactionOrderCreatedEvent, PostgresContext>(serviceScopeFactory)

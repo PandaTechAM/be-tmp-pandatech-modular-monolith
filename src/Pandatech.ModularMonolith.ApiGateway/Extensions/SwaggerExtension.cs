@@ -1,11 +1,11 @@
 ﻿using BaseConverter.Attributes;
 using BaseConverter.Filters;
-using FinHub.ApiGateway.Configurations.Options;
 using Microsoft.OpenApi.Models;
+using Pandatech.ModularMonolith.ApiGateway.Configurations.Options;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using Swashbuckle.AspNetCore.SwaggerUI;
 
-namespace FinHub.ApiGateway.Extensions;
+namespace Pandatech.ModularMonolith.ApiGateway.Extensions;
 
 public static class SwaggerExtension
 {

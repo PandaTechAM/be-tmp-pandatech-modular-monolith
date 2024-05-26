@@ -3,6 +3,8 @@ using FinHub.Mock1;
 using FinHub.Mock2;
 using NetArchTest.Rules;
 using Pandatech.ModularMonolith.ApiGateway;
+using Pandatech.ModularMonolith.Mock1;
+using Pandatech.ModularMonolith.Mock2;
 using Pandatech.ModularMonolith.Scheduler;
 using Pandatech.ModularMonolith.SharedKernel;
 

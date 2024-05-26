@@ -1,10 +1,10 @@
-using FinHub.Mock1.Entities;
 using MassTransit.PostgresOutbox.Abstractions;
 using MassTransit.PostgresOutbox.Entities;
 using MassTransit.PostgresOutbox.Extensions;
 using Microsoft.EntityFrameworkCore;
+using Pandatech.ModularMonolith.Mock1.Entities;
 
-namespace FinHub.Mock1.Context;
+namespace Pandatech.ModularMonolith.Mock1.Context;
 
 //dotnet ef migrations add --project src\Pandatech.ModularMonolith.Mock1\Pandatech.ModularMonolith.Mock1.csproj --context Pandatech.ModularMonolith.Mock1.Context.PostgresContext --configuration Debug --output-dir ./Context/Migrations
 public class PostgresContext(DbContextOptions<PostgresContext> options) : DbContext(options)

@@ -1,6 +1,6 @@
 ﻿using RegexBox;
 
-namespace FinHub.ApiGateway.Extensions;
+namespace Pandatech.ModularMonolith.ApiGateway.Extensions;
 
 public static class CorsExtension
 {

@@ -1,4 +1,4 @@
-namespace FinHub.Mock1.Helpers;
+namespace Pandatech.ModularMonolith.Mock1.Helpers;
 
 public static class ConfigurationPaths
 {

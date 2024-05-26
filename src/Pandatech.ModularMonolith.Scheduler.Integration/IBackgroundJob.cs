@@ -1,6 +1,6 @@
 using System.Linq.Expressions;
 
-namespace FinHub.Scheduler.Contracts;
+namespace Pandatech.ModularMonolith.Scheduler.Integration;
 
 public interface IBackgroundJob
 {

@@ -1,12 +1,12 @@
 using EFCore.PostgresExtensions.Extensions;
-using FinHub.Mock1.Context;
-using FinHub.Mock1.Helpers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Pandatech.ModularMonolith.Mock1.Context;
+using Pandatech.ModularMonolith.Mock1.Helpers;
 
-namespace FinHub.Mock1.Extensions;
+namespace Pandatech.ModularMonolith.Mock1.Extensions;
 
 public static class DatabaseExtensions
 {

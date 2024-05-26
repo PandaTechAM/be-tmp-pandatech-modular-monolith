@@ -1,12 +1,12 @@
 ﻿using System.Data;
 using EFCore.PostgresExtensions.Extensions;
-using FinHub.Mock1.Context;
-using FinHub.Mock1.Enums;
 using MassTransit;
 using Microsoft.EntityFrameworkCore;
+using Pandatech.ModularMonolith.Mock1.Context;
+using Pandatech.ModularMonolith.Mock1.Enums;
 using Pandatech.ModularMonolith.SharedKernel.Interfaces;
 
-namespace FinHub.Mock1.Features.Update;
+namespace Pandatech.ModularMonolith.Mock1.Features.Update;
 
 internal class UpdateTransactionOrderCommandHandler(PostgresContext postgresContext, IPublishEndpoint bus)
    : ICommandHandler<UpdateTransactionOrderCommand>

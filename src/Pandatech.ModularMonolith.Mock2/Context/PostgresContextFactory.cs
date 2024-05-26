@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 
-namespace FinHub.Mock2.Context;
+namespace Pandatech.ModularMonolith.Mock2.Context;
 
 public class PostgresContextFactory : IDesignTimeDbContextFactory<PostgresContext>
 {

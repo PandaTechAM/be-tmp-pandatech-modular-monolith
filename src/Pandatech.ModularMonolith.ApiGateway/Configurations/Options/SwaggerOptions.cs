@@ -1,4 +1,4 @@
-﻿namespace FinHub.ApiGateway.Configurations.Options;
+﻿namespace Pandatech.ModularMonolith.ApiGateway.Configurations.Options;
 
 public class SwaggerOptions
 {

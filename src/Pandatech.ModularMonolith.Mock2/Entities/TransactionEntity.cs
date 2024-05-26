@@ -1,4 +1,4 @@
-namespace FinHub.Mock2.Entities;
+namespace Pandatech.ModularMonolith.Mock2.Entities;
 
 public class TransactionEntity
 {

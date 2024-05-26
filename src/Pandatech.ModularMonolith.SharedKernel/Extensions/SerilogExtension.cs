@@ -21,6 +21,7 @@ public static class SerilogExtension
          .Enrich.FromLogContext()
          .Enrich.WithMachineName()
          .Filter.ByExcluding(logEvent => logEvent.ShouldExcludeHangfireDashboardLogs())
+         .Filter.ByExcluding(logEvent => logEvent.ShouldExcludeOutboxDbCommandLogs(builder.Environment))
          .ReadFrom.Configuration(configuration);
 
       ConfigureEnvironmentSpecificSettings(builder.Environment, loggerConfig, elasticSearchUrl, indexName);
@@ -69,6 +70,17 @@ public static class SerilogExtension
          numberOfReplicas: 1,
          bufferBaseFilename: "./logs/elastic-buffer",
          bufferFileSizeLimitBytes: 1024 * 1024 * 16); // 16 MB each buffer file
+   }
+   
+   private static bool ShouldExcludeOutboxDbCommandLogs(this LogEvent logEvent, IHostEnvironment environment)
+   {
+      if (!environment.IsLocalOrDevelopmentOrQa())
+      {
+         return false;
+      }
+      return logEvent.RenderMessage().StartsWith("Executed DbCommand") &&
+             (logEvent.RenderMessage().Contains("FROM outbox_messages") || 
+              logEvent.RenderMessage().Contains("FROM OutboxMessages"));
    }
 
    private static bool ShouldExcludeHangfireDashboardLogs(this LogEvent logEvent)

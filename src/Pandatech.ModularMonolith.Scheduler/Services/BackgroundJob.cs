@@ -1,6 +1,6 @@
 using System.Linq.Expressions;
-using FinHub.Scheduler.Contracts;
 using Hangfire;
+using Pandatech.ModularMonolith.Scheduler.Integration;
 
 namespace Pandatech.ModularMonolith.Scheduler.Services;
 

@@ -1,6 +1,6 @@
 using Pandatech.ModularMonolith.SharedKernel.Interfaces;
 
-namespace FinHub.Mock2.Features;
+namespace Pandatech.ModularMonolith.Mock2.Features;
 
 public class CreateTransactionV1Command : ICommand
 {

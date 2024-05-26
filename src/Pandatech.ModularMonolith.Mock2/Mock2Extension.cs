@@ -1,12 +1,12 @@
-using FinHub.Mock2.Context;
-using FinHub.Mock2.Helpers;
 using MassTransit.PostgresOutbox.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
+using Pandatech.ModularMonolith.Mock2.Context;
+using Pandatech.ModularMonolith.Mock2.Helpers;
 using Pandatech.ModularMonolith.SharedKernel.Extensions;
 using Pandatech.ModularMonolith.SharedKernel.Helpers;
 
-namespace FinHub.Mock2;
+namespace Pandatech.ModularMonolith.Mock2;
 
 public static class Mock2Extension
 {

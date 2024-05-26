@@ -1,14 +1,14 @@
-using FinHub.Mock1.Features.Create;
-using FinHub.Mock1.Features.Update;
 using FluentMinimalApiMapper;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
+using Pandatech.ModularMonolith.Mock1.Features.Create;
+using Pandatech.ModularMonolith.Mock1.Features.Update;
 using Pandatech.ModularMonolith.SharedKernel.Helpers;
 
-namespace FinHub.Mock1.Endpoints;
+namespace Pandatech.ModularMonolith.Mock1.Endpoints;
 
 public class TransactionEndpoints : IEndpoint
 {

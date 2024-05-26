@@ -1,10 +1,10 @@
-using FinHub.ApiGateway.Extensions;
 using FluentMinimalApiMapper;
+using Pandatech.ModularMonolith.ApiGateway.Extensions;
 using Pandatech.ModularMonolith.SharedKernel.Extensions;
 using Pandatech.ModularMonolith.SharedKernel.Helpers;
 using Pandatech.ModularMonolith.SharedKernel.SharedEndpoints;
 using PandaVaultClient;
-using ResponseCrafter;
+using ResponseCrafter.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 

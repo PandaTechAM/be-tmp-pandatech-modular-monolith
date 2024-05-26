@@ -1,4 +1,4 @@
-namespace FinHub.Mock1.Enums;
+namespace Pandatech.ModularMonolith.Mock1.Enums;
 
 public enum Status
 {
