@@ -480,6 +480,4 @@ $RECYCLE.BIN/
 # Added by me
 .idea
 logs
-
-src/WebApi/wwwroot/assets/data/private/*
-src/WebApi/wwwroot/assets/data/public/*
+LocalFileStorage
