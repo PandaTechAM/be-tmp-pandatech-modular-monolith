@@ -2,6 +2,7 @@
 using BaseConverter.Filters;
 using Microsoft.OpenApi.Models;
 using Pandatech.ModularMonolith.ApiGateway.Configurations.Options;
+using Pandatech.ModularMonolith.ApiGateway.Helpers;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using Swashbuckle.AspNetCore.SwaggerUI;
 
@@ -40,6 +41,7 @@ public static class SwaggerExtension
          // Add string input support into int64 field
          options.ParameterFilter<PandaParameterBaseConverterAttribute>();
          options.SchemaFilter<PandaPropertyBaseConverterSwaggerFilter>();
+         options.SchemaFilter<EnumSwaggerSchemaFilter>();
 
          // Add the custom token authentication option
          options.AddSecurityDefinitions();
