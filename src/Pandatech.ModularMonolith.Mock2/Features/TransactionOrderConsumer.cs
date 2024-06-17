@@ -9,7 +9,7 @@ namespace Pandatech.ModularMonolith.Mock2.Features;
 public class TransactionOrderConsumer(ISender sender, IServiceScopeFactory serviceScopeFactory)
    : InboxConsumer<TransactionOrderCreatedEvent, PostgresContext>(serviceScopeFactory)
 {
-   public override async Task Consume(TransactionOrderCreatedEvent message)
+   protected override async Task Consume(TransactionOrderCreatedEvent message)
    {
       var command = new CreateTransactionV1Command
       {
