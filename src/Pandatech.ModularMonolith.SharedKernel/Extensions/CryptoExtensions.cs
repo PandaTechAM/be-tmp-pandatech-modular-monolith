@@ -1,4 +1,5 @@
 using BaseConverter;
+using BaseConverter.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Pandatech.Crypto;
 using Pandatech.ModularMonolith.SharedKernel.Helpers;
