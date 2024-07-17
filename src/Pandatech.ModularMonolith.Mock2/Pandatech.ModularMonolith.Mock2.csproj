@@ -1,20 +1,20 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-     <ItemGroup>
-      <ProjectReference Include="..\Pandatech.ModularMonolith.Mock1.Integration\Pandatech.ModularMonolith.Mock1.Integration.csproj" />
-      <ProjectReference Include="..\Pandatech.ModularMonolith.Mock2.Integration\Pandatech.ModularMonolith.Mock2.Integration.csproj" />
-   </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\Pandatech.ModularMonolith.Mock1.Integration\Pandatech.ModularMonolith.Mock1.Integration.csproj"/>
+        <ProjectReference Include="..\Pandatech.ModularMonolith.Mock2.Integration\Pandatech.ModularMonolith.Mock2.Integration.csproj"/>
+    </ItemGroup>
 
-   <ItemGroup>
-      <Folder Include="Enums\"/>
-      <Folder Include="Extensions\" />
-   </ItemGroup>
+    <ItemGroup>
+        <Folder Include="Enums\"/>
+        <Folder Include="Extensions\"/>
+    </ItemGroup>
 
-   <ItemGroup>
-      <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.6">
-         <PrivateAssets>all</PrivateAssets>
-         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      </PackageReference>
-   </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.6">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+    </ItemGroup>
 
 </Project>

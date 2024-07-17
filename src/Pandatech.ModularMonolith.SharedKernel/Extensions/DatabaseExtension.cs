@@ -5,17 +5,16 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Pandatech.ModularMonolith.SharedKernel.Extensions;
 
-
 public static class DatabaseExtensions
 {
-   public static WebApplicationBuilder AddPostgresContext<TContext>(this WebApplicationBuilder builder, string connectionString)
+   public static WebApplicationBuilder AddPostgresContext<TContext>(this WebApplicationBuilder builder,
+      string connectionString)
       where TContext : DbContext
    {
-
       builder.Services.AddDbContextPool<TContext>(options =>
          options.UseNpgsql(connectionString)
-            .UseQueryLocks()
-            .UseSnakeCaseNamingConvention());
+                .UseQueryLocks()
+                .UseSnakeCaseNamingConvention());
       return builder;
    }
 

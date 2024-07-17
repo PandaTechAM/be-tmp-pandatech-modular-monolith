@@ -10,7 +10,8 @@ public class LoggingBehavior<TRequest, TResponse>(ILogger<Mediator> logger, IHos
    : IPipelineBehavior<TRequest, TResponse>
    where TRequest : IRequest<TResponse>
 {
-   public async Task<TResponse> Handle(TRequest request, RequestHandlerDelegate<TResponse> next,
+   public async Task<TResponse> Handle(TRequest request,
+      RequestHandlerDelegate<TResponse> next,
       CancellationToken cancellationToken)
    {
       if (request is null)
@@ -40,7 +41,9 @@ public class LoggingBehavior<TRequest, TResponse>(ILogger<Mediator> logger, IHos
       var response = await next();
       sw.Stop();
 
-      logger.LogInformation("Handled {RequestName} with {Response} in {Ms} ms", typeof(TRequest).Name, response,
+      logger.LogInformation("Handled {RequestName} with {Response} in {Ms} ms",
+         typeof(TRequest).Name,
+         response,
          sw.ElapsedMilliseconds);
       return response;
    }

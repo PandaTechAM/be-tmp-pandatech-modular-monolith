@@ -14,8 +14,10 @@ public static class HealthCheckExtension
       var postgresConnectionString = configuration.GetConnectionString(ConfigurationPaths.Postgres)!;
 
       builder.Services
-         .AddHealthChecks()
-         .AddNpgSql(postgresConnectionString, timeout: timeoutSeconds, name: "postgres_pandatech_modular_monolith_scheduler");
+             .AddHealthChecks()
+             .AddNpgSql(postgresConnectionString,
+                timeout: timeoutSeconds,
+                name: "postgres_pandatech_modular_monolith_scheduler");
 
       return builder;
    }

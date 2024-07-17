@@ -33,7 +33,9 @@ public static class HttpContextParser
 
    public static string TryParseClientType(this HttpContext httpContext)
    {
-      var clientType = httpContext.Request.Headers["client-type"].ToString();
+      var clientType = httpContext.Request
+                                  .Headers["client-type"]
+                                  .ToString();
       return clientType;
    }
 
@@ -58,7 +60,9 @@ public static class HttpContextParser
 
    public static string TryParseDeviceName(this HttpContext httpContext)
    {
-      return httpContext.Request.Headers["device-name"].ToString();
+      return httpContext.Request
+                        .Headers["device-name"]
+                        .ToString();
    }
 
 
@@ -187,14 +191,20 @@ public static class HttpContextParser
 
       if (headerName != "Forwarded")
       {
-         return value.ToString().Split(',').FirstOrDefault()?.Trim();
+         return value.ToString()
+                     .Split(',')
+                     .FirstOrDefault()
+                     ?.Trim();
       }
 
-      var forwardedValues = value.ToString().Split(';').Select(p => p.Trim());
+      var forwardedValues = value.ToString()
+                                 .Split(';')
+                                 .Select(p => p.Trim());
       var forValue = forwardedValues.FirstOrDefault(p => p.StartsWith("for="));
       if (!string.IsNullOrWhiteSpace(forValue) && forValue.Length > 4)
       {
-         return forValue.Substring(4).Trim();
+         return forValue.Substring(4)
+                        .Trim();
       }
 
       return null;

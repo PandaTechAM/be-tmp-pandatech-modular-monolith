@@ -19,7 +19,8 @@ public static class ModulesExtension
 
       builder.AddSchedulerModule();
 
-      var assemblies = AssemblyRegistry.GetAllAssemblies().ToList();
+      var assemblies = AssemblyRegistry.GetAllAssemblies()
+                                       .ToList();
       builder
          .AddEndpoints(assemblies) //After modules always
          .AddMediatrWithBehaviors(assemblies); //After modules always

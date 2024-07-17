@@ -24,12 +24,13 @@ builder
    .AddSwagger()
    .AddPandaCryptoAndFilters()
    .AddSharedHealthChecks()
-   .AddMassTransit(AssemblyRegistry.GetAllAssemblies().ToArray())
+   .AddMassTransit(AssemblyRegistry.GetAllAssemblies()
+                                   .ToArray())
    .ConfigureOpenTelemetry();
 
 builder.Services
-   .AddSwaggerGen()
-   .AddEndpointsApiExplorer();
+       .AddSwaggerGen()
+       .AddEndpointsApiExplorer();
 
 
 var app = builder.Build();
@@ -50,5 +51,5 @@ app.Run();
 
 namespace Pandatech.ModularMonolith.ApiGateway
 {
-   public partial class Program;
+   public class Program;
 }

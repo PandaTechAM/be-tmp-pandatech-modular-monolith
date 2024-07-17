@@ -10,7 +10,9 @@ public class Project(string groupName, ProjectType type, Assembly assembly)
 
    public Assembly Assembly { get; } = assembly;
 
-   public string? AssemblyName => Assembly.GetName().Name;
+   public string? AssemblyName =>
+      Assembly.GetName()
+              .Name;
 }
 
 public enum ProjectType

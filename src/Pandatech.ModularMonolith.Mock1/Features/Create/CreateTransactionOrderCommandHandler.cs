@@ -15,13 +15,18 @@ public class CreateTransactionOrderCommandHandler(PostgresContext postgresContex
    {
       var transaction = new TransactionOrderEntity
       {
-         UserId = 1, Status = Status.Enqueued, Amount = 239.43m, Narrative = "null"
+         UserId = 1,
+         Status = Status.Enqueued,
+         Amount = 239.43m,
+         Narrative = "null"
       };
 
       postgresContext.TransactionOrders.Add(transaction);
 
-      var transactionOrderEvent = new TransactionOrderCreatedEvent(transaction.Id, transaction.UserId,
-         transaction.Amount, transaction.Narrative);
+      var transactionOrderEvent = new TransactionOrderCreatedEvent(transaction.Id,
+         transaction.UserId,
+         transaction.Amount,
+         transaction.Narrative);
 
       postgresContext.AddToOutbox(transactionOrderEvent);
 

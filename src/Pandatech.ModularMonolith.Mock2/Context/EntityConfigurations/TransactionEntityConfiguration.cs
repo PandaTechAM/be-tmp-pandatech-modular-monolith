@@ -10,11 +10,16 @@ public class TransactionEntityConfiguration : IEntityTypeConfiguration<Transacti
    {
       builder.HasKey(b => b.Id);
 
-      builder.Property(b => b.TransactionOrderId).IsRequired();
-      builder.Property(b => b.UserId).IsRequired();
-      builder.Property(b => b.Amount).IsRequired();
+      builder.Property(b => b.TransactionOrderId)
+             .IsRequired();
+      builder.Property(b => b.UserId)
+             .IsRequired();
+      builder.Property(b => b.Amount)
+             .IsRequired();
       builder.Property(b => b.Narrative);
-      builder.Property(b => b.CreatedAt).IsRequired();
-      builder.Property(b => b.UpdatedAt).IsRequired();
+      builder.Property(b => b.CreatedAt)
+             .IsRequired();
+      builder.Property(b => b.UpdatedAt)
+             .IsRequired();
    }
 }

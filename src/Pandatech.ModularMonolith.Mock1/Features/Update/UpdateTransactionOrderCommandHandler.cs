@@ -19,8 +19,8 @@ internal class UpdateTransactionOrderCommandHandler(PostgresContext postgresCont
       try
       {
          var order = await postgresContext.TransactionOrders
-            .ForUpdate()
-            .FirstOrDefaultAsync(x => x.Id == request.Id, cancellationToken);
+                                          .ForUpdate()
+                                          .FirstOrDefaultAsync(x => x.Id == request.Id, cancellationToken);
          if (order != null)
          {
             order.Status = Status.Processing;

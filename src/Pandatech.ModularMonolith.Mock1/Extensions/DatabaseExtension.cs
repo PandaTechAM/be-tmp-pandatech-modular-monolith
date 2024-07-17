@@ -17,8 +17,8 @@ public static class DatabaseExtensions
       var connectionString = configuration.GetConnectionString(ConfigurationPaths.Postgres);
       builder.Services.AddDbContextPool<PostgresContext>(options =>
          options.UseNpgsql(connectionString)
-            .UseQueryLocks()
-            .UseSnakeCaseNamingConvention());
+                .UseQueryLocks()
+                .UseSnakeCaseNamingConvention());
       return builder;
    }
 

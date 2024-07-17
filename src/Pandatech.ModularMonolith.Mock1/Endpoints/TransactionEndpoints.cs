@@ -19,21 +19,26 @@ public class TransactionEndpoints : IEndpoint
    public void AddRoutes(IEndpointRouteBuilder app)
    {
       var groupApp = app
-         .MapGroup(RoutePrefix)
-         .WithTags(TagName)
-         .WithGroupName(ApiHelper.GroupNameMain)
-         .WithOpenApi();
+                     .MapGroup(RoutePrefix)
+                     .WithTags(TagName)
+                     .WithGroupName(ApiHelper.GroupNameMain)
+                     .WithOpenApi();
 
-      groupApp.MapPost("", async ([FromServices] ISender sender) =>
-      {
-         await sender.Send(new CreateTransactionOrderCommand());
-         return TypedResults.Ok();
-      });
+      groupApp.MapPost("",
+         async ([FromServices] ISender sender) =>
+         {
+            await sender.Send(new CreateTransactionOrderCommand());
+            return TypedResults.Ok();
+         });
 
-      groupApp.MapPut("{id}", async ([FromRoute] long id, [FromServices] ISender sender) =>
-      {
-         await sender.Send(new UpdateTransactionOrderCommand { Id = id });
-         return TypedResults.Ok();
-      });
+      groupApp.MapPut("{id}",
+         async ([FromRoute] long id, [FromServices] ISender sender) =>
+         {
+            await sender.Send(new UpdateTransactionOrderCommand
+            {
+               Id = id
+            });
+            return TypedResults.Ok();
+         });
    }
 }

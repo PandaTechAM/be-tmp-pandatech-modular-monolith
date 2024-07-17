@@ -30,7 +30,9 @@ public static class StartupLogger
       var initializationTime = Math.Round(_stopwatch.Elapsed.TotalMilliseconds / 1000, 2);
       Console.WriteLine(JsonConvert.SerializeObject(new
       {
-         Timestamp = now, Event = "ApplicationStartSuccess", InitializationTime = $"{initializationTime} seconds"
+         Timestamp = now,
+         Event = "ApplicationStartSuccess",
+         InitializationTime = $"{initializationTime} seconds"
       }));
    }
 
@@ -39,7 +41,9 @@ public static class StartupLogger
       var now = DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss.fff", CultureInfo.InvariantCulture);
       Console.WriteLine(JsonConvert.SerializeObject(new
       {
-         Timestamp = now, Event = "ModuleRegistrationSuccess", Module = moduleName
+         Timestamp = now,
+         Event = "ModuleRegistrationSuccess",
+         Module = moduleName
       }));
    }
 
@@ -48,7 +52,9 @@ public static class StartupLogger
       var now = DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss.fff", CultureInfo.InvariantCulture);
       Console.WriteLine(JsonConvert.SerializeObject(new
       {
-         Timestamp = now, Event = "ModuleUseSuccess", Module = moduleName
+         Timestamp = now,
+         Event = "ModuleUseSuccess",
+         Module = moduleName
       }));
    }
 }

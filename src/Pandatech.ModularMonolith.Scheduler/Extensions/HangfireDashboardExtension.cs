@@ -16,7 +16,14 @@ public static class HangfireDashboardExtension
          new DashboardOptions
          {
             DashboardTitle = "Scheduler Dashboard",
-            Authorization = new[] { new HangfireCustomBasicAuthenticationFilter { User = user, Pass = pass } }
+            Authorization = new[]
+            {
+               new HangfireCustomBasicAuthenticationFilter
+               {
+                  User = user,
+                  Pass = pass
+               }
+            }
          });
       app.MapHangfireDashboard();
 
