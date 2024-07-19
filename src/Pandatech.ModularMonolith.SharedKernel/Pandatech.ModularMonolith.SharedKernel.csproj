@@ -12,13 +12,13 @@
         <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0"/>
         <PackageReference Include="MassTransit.RabbitMQ" Version="8.2.3"/>
         <PackageReference Include="MediatR" Version="12.3.0"/>
-        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.6"/>
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.6">
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.7"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.7">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="8.0.6"/>
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.6">
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="8.0.7"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.7">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
@@ -31,19 +31,18 @@
         <PackageReference Include="OpenTelemetry.Instrumentation.GrpcNetClient" Version="1.7.0-beta.1"/>
         <PackageReference Include="OpenTelemetry.Instrumentation.Http" Version="1.9.0"/>
         <PackageReference Include="OpenTelemetry.Instrumentation.Runtime" Version="1.9.0"/>
-        <PackageReference Include="PandaTech.BaseConverter" Version="4.0.1"/>
-        <PackageReference Include="Pandatech.Crypto" Version="2.4.1"/>
-        <PackageReference Include="Pandatech.EFCore.PostgresExtensions" Version="2.0.1"/>
+        <PackageReference Include="Pandatech.Crypto" Version="2.5.0"/>
+        <PackageReference Include="Pandatech.EFCore.PostgresExtensions" Version="3.0.0"/>
         <PackageReference Include="Pandatech.FluentMinimalApiMapper" Version="1.1.0"/>
 
         <PackageReference Include="Pandatech.MassTransit.PostgresOutbox" Version="1.0.7"/>
         <PackageReference Include="Pandatech.PandaVaultClient" Version="3.1.0"/>
         <PackageReference Include="Pandatech.RegexBox" Version="1.2.4"/>
-        <PackageReference Include="Pandatech.ResponseCrafter" Version="2.0.0"/>
+        <PackageReference Include="Pandatech.ResponseCrafter" Version="3.0.0"/>
         <PackageReference Include="Serilog.AspNetCore" Version="8.0.1"/>
-        <PackageReference Include="Serilog.Enrichers.Environment" Version="3.0.0"/>
+        <PackageReference Include="Serilog.Enrichers.Environment" Version="3.0.1"/>
         <PackageReference Include="Serilog.Sinks.Elasticsearch" Version="10.0.0"/>
-        <PackageReference Include="SonarAnalyzer.CSharp" Version="9.27.0.93347">
+        <PackageReference Include="SonarAnalyzer.CSharp" Version="9.29.0.95321">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
