@@ -37,7 +37,9 @@ var app = builder.Build();
 
 app.UseStaticFiles();
 
-app.UseResponseCrafter()
+app
+   .UseRequestResponseLogging()
+   .UseResponseCrafter()
    .UseCors()
    .UseModules()
    .EnsureHealthy()
