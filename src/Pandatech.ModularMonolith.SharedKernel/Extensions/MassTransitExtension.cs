@@ -3,6 +3,7 @@ using MassTransit;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Pandatech.ModularMonolith.SharedKernel.Helpers;
+using Pandatech.VerticalSlices.SharedKernel.Helpers;
 
 namespace Pandatech.ModularMonolith.SharedKernel.Extensions;
 
@@ -18,7 +19,7 @@ public static class MassTransitExtension
 
          x.UsingRabbitMq((context, cfg) =>
          {
-            cfg.Host(builder.Configuration.GetConnectionString(ConfigurationPaths.RabbitMqUrl));
+            cfg.Host(builder.Configuration.GetConnectionString(builder.Configuration.GetRabbitMqUrl()));
             cfg.ConfigureEndpoints(context);
             cfg.UseMessageRetry(r =>
                r.Exponential(10, TimeSpan.FromSeconds(1), TimeSpan.FromSeconds(100), TimeSpan.FromSeconds(2)));

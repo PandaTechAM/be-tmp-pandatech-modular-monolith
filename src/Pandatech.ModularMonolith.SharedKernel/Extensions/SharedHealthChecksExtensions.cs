@@ -3,6 +3,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Pandatech.ModularMonolith.SharedKernel.Helpers;
+using Pandatech.VerticalSlices.SharedKernel.Helpers;
 using RabbitMQ.Client;
 
 namespace Pandatech.ModularMonolith.SharedKernel.Extensions;
@@ -13,9 +14,8 @@ public static class SharedHealthChecksExtensions
    {
       var configuration = builder.Configuration;
       var timeoutSeconds = TimeSpan.FromSeconds(5);
-      var redisConnectionString = configuration.GetConnectionString(ConfigurationPaths.RedisUrl)!;
-      var elasticSearchUrl = configuration.GetConnectionString(ConfigurationPaths.ElasticSearchUrl)!;
-      var rabbitMqUri = configuration.GetConnectionString(ConfigurationPaths.RabbitMqUrl)!;
+      var redisConnectionString = configuration.GetConnectionString(builder.Configuration.GetRedisUrl())!;
+      var rabbitMqUri = configuration.GetConnectionString(builder.Configuration.GetRabbitMqUrl())!;
 
       //This part is only for RMQ health check
       ConnectionFactory factory = new()
@@ -40,7 +40,6 @@ public static class SharedHealthChecksExtensions
                 .AddSingleton(connection)
                 .AddHealthChecks()
                 .AddRedis(redisConnectionString, timeout: timeoutSeconds)
-                .AddElasticsearch(elasticSearchUrl, timeout: timeoutSeconds)
                 .AddRabbitMQ();
       }
       else
@@ -49,7 +48,6 @@ public static class SharedHealthChecksExtensions
                 .AddSingleton(connection)
                 .AddHealthChecks()
                 .AddRedis(redisConnectionString, timeout: timeoutSeconds)
-                .AddElasticsearch(elasticSearchUrl, timeout: timeoutSeconds)
                 .AddRabbitMQ();
       }
 

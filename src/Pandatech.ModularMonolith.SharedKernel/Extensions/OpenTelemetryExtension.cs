@@ -30,8 +30,7 @@ public static class OpenTelemetryExtension
              .WithTracing(tracing =>
              {
                 tracing.AddAspNetCoreInstrumentation()
-                       .AddHttpClientInstrumentation()
-                       .AddGrpcClientInstrumentation();
+                       .AddHttpClientInstrumentation();
              });
 
       return builder;
