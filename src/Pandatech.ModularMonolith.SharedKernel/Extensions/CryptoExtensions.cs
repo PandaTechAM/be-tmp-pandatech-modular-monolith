@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Pandatech.Crypto;
 using Pandatech.ModularMonolith.SharedKernel.Helpers;
-using Pandatech.VerticalSlices.SharedKernel.Helpers;
 
 namespace Pandatech.ModularMonolith.SharedKernel.Extensions;
 

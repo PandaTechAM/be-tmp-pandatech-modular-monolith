@@ -3,7 +3,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Pandatech.ModularMonolith.SharedKernel.Helpers;
-using Pandatech.VerticalSlices.SharedKernel.Helpers;
 using RabbitMQ.Client;
 
 namespace Pandatech.ModularMonolith.SharedKernel.Extensions;

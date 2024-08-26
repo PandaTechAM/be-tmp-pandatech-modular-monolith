@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Pandatech.VerticalSlices.SharedKernel.Helpers;
+using Pandatech.ModularMonolith.SharedKernel.Helpers;
 using Serilog;
 using Serilog.Events;
 

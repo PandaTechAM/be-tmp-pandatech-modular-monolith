@@ -3,7 +3,6 @@ using MassTransit;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Pandatech.ModularMonolith.SharedKernel.Helpers;
-using Pandatech.VerticalSlices.SharedKernel.Helpers;
 
 namespace Pandatech.ModularMonolith.SharedKernel.Extensions;
 

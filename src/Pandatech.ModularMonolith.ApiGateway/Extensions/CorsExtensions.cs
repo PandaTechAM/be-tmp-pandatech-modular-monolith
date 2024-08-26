@@ -1,4 +1,4 @@
-﻿using Pandatech.VerticalSlices.SharedKernel.Helpers;
+﻿using Pandatech.ModularMonolith.SharedKernel.Helpers;
 
 namespace Pandatech.ModularMonolith.ApiGateway.Extensions;
 
