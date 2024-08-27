@@ -1,8 +1,8 @@
 using Microsoft.Extensions.Configuration;
 
-namespace Pandatech.ModularMonolith.SharedKernel.Helpers;
+namespace Pandatech.ModularMonolith.SharedKernel.Extensions;
 
-public static class ConfigurationHelper
+public static class ConfigurationExtensions
 {
    private const string AesKeyConfigurationPath = "Security:AESKey";
    private const string RedisConfigurationPath = "Redis";
