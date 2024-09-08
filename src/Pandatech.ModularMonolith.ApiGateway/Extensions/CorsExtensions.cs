@@ -41,6 +41,8 @@ public static class CorsExtension
       return app;
    }
 
+   private static readonly char[] Separator = [';', ','];
+
    private static string[] SplitOrigins(this string input)
    {
       if (string.IsNullOrEmpty(input))
@@ -48,7 +50,7 @@ public static class CorsExtension
          throw new ArgumentException("Cors Origins cannot be null or empty.");
       }
 
-      var result = input.Split([';', ','], StringSplitOptions.RemoveEmptyEntries);
+      var result = input.Split(Separator, StringSplitOptions.RemoveEmptyEntries);
 
       for (var i = 0; i < result.Length; i++)
       {
