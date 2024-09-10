@@ -5,6 +5,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Pandatech.ModularMonolith.SharedKernel.Helpers;
 using Serilog;
+using Serilog.Configuration;
 using Serilog.Events;
 
 namespace Pandatech.ModularMonolith.SharedKernel.Extensions;
@@ -37,7 +38,9 @@ public static class SerilogExtension
    {
       if (builder.Environment.IsLocal())
       {
-         loggerConfig.WriteTo.Console();
+         loggerConfig
+            .WriteTo
+            .Console();
       }
       else if (builder.Environment.IsDevelopment())
       {
@@ -45,22 +48,24 @@ public static class SerilogExtension
             .WriteTo
             .Console()
             .WriteTo
-            .File(new EcsTextFormatter(),
-               builder.GetLogsPath(),
-               rollingInterval: RollingInterval.Day,
-               shared: true);
+            .File(builder);
       }
       else
       {
          loggerConfig
             .WriteTo
-            .File(new EcsTextFormatter(),
-               builder.GetLogsPath(),
-               rollingInterval: RollingInterval.Day,
-               shared: true);
+            .File(builder);
       }
 
       return loggerConfig;
+   }
+   
+   private static void File(this LoggerSinkConfiguration loggerConfig, WebApplicationBuilder builder)
+   {
+      loggerConfig
+         .File(new EcsTextFormatter(),
+            builder.GetLogsPath(),
+            rollingInterval: RollingInterval.Day);
    }
 
    private static LoggerConfiguration FilterOutUnwantedLogs(this LoggerConfiguration loggerConfig)
@@ -90,6 +95,7 @@ public static class SerilogExtension
       var message = logEvent.RenderMessage();
       return message.Contains("outbox_messages") || message.Contains("OutboxMessages");
    }
+   
 
    private static bool ShouldExcludeSwaggerLogs(this LogEvent logEvent)
    {
