@@ -1,4 +1,5 @@
 using EFCore.PostgresExtensions.Extensions;
+using EntityFramework.Exceptions.PostgreSQL;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -14,6 +15,7 @@ public static class DatabaseExtensions
       builder.Services.AddDbContextPool<TContext>(options =>
          options.UseNpgsql(connectionString)
                 .UseQueryLocks()
+                .UseExceptionProcessor()
                 .UseSnakeCaseNamingConvention());
       return builder;
    }

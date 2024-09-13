@@ -24,7 +24,7 @@ public static class SchedulerExtension
 
       builder.Services.AddSingleton<IBackgroundJob, BackgroundJob>();
 
-      StartupLogger.LogModuleRegistrationSuccess("Scheduler");
+      builder.LogModuleRegistrationSuccess("Scheduler");
 
       return builder;
    }
@@ -34,7 +34,7 @@ public static class SchedulerExtension
       app.MigrateDatabase<PostgresContext>()
          .RunHangfireDashboard();
 
-      StartupLogger.LogModuleUseSuccess("Scheduler");
+      app.LogModuleUseSuccess("Scheduler");
       return app;
    }
 }

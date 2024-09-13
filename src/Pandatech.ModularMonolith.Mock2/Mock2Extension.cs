@@ -19,14 +19,14 @@ public static class Mock2Extension
          builder.Configuration.GetConnectionString(ConfigurationPaths.Postgres)!);
       builder.Services.AddOutboxInboxServices<PostgresContext>();
 
-      StartupLogger.LogModuleRegistrationSuccess("Mock2");
+      builder.LogModuleRegistrationSuccess("Mock2");
       return builder;
    }
 
    public static WebApplication UseMock2Module(this WebApplication app)
    {
       app.MigrateDatabase<PostgresContext>();
-      StartupLogger.LogModuleUseSuccess("Mock2");
+      app.LogModuleUseSuccess("Mock2");
       return app;
    }
 }

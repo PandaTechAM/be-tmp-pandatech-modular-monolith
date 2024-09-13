@@ -24,6 +24,7 @@ builder
    .AddSwagger()
    .AddPandaCryptoAndFilters()
    .AddSharedHealthChecks()
+   .AddResilienceDefaultPipeline()
    .AddMassTransit(AssemblyRegistry.GetAllAssemblies()
                                    .ToArray())
    .ConfigureOpenTelemetry();
@@ -48,7 +49,7 @@ app
 app.MapPandaEndpoints();
 app.MapEndpoints();
 
-StartupLogger.LogStartSuccess();
+app.LogStartSuccess();
 app.Run();
 
 namespace Pandatech.ModularMonolith.ApiGateway
