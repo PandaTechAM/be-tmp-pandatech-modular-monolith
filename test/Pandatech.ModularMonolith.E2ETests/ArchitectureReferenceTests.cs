@@ -10,7 +10,7 @@ namespace FinHub.E2ETests;
 
 public class ArchitectureReferenceTests
 {
-   private static readonly List<Project> _projects =
+   private static readonly List<Project> Projects =
    [
       new Project("Mock1", ProjectType.Module, typeof(Mock1Extension).Assembly),
       new Project("Mock1Integration",
@@ -36,8 +36,8 @@ public class ArchitectureReferenceTests
    [Fact]
    public void ApiGateway_Should_HaveDependency_On_All_Modules()
    {
-      var apiGateway = _projects.First(p => p.Type == ProjectType.ApiGateway);
-      var modules = _projects.Where(p => p.Type == ProjectType.Module);
+      var apiGateway = Projects.First(p => p.Type == ProjectType.ApiGateway);
+      var modules = Projects.Where(p => p.Type == ProjectType.Module);
       var referencedAssemblies = apiGateway.Assembly.GetReferencedAssemblies();
 
       foreach (var module in modules)
@@ -54,8 +54,8 @@ public class ArchitectureReferenceTests
    [Fact]
    public void Projects_Should_HaveDependency_On_SharedKernel()
    {
-      var kernelProject = _projects.First(p => p.Type == ProjectType.SharedKernel);
-      var projects = _projects.Where(p => p.Type is not ProjectType.SharedKernel and not ProjectType.ModuleIntegration);
+      var kernelProject = Projects.First(p => p.Type == ProjectType.SharedKernel);
+      var projects = Projects.Where(p => p.Type is not ProjectType.SharedKernel and not ProjectType.ModuleIntegration);
 
       foreach (var project in projects)
       {
@@ -72,8 +72,8 @@ public class ArchitectureReferenceTests
    [Fact]
    public void SharedKernel_Should_Not_HaveDependency_On_OtherProjects()
    {
-      var sharedKernel = _projects.First(p => p.Type == ProjectType.SharedKernel);
-      var otherProjects = _projects
+      var sharedKernel = Projects.First(p => p.Type == ProjectType.SharedKernel);
+      var otherProjects = Projects
                           .Where(p => p.GroupName != sharedKernel.GroupName)
                           .Select(p => p.AssemblyName)
                           .ToArray();
@@ -90,9 +90,9 @@ public class ArchitectureReferenceTests
    [Fact]
    public void Modules_Should_Not_Have_Dependency_On_Other_Modules_Except_Integrations()
    {
-      foreach (var project in _projects.Where(p => p.Type == ProjectType.Module))
+      foreach (var project in Projects.Where(p => p.Type == ProjectType.Module))
       {
-         var forbiddenDependencies = _projects
+         var forbiddenDependencies = Projects
                                      .Where(p => p.Type == ProjectType.Module && p.GroupName != project.GroupName)
                                      .Select(p => p.AssemblyName)
                                      .ToArray();

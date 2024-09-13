@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 namespace Pandatech.ModularMonolith.SharedKernel.Extensions;
 
-public static class StartupLogger
+public static class StartupLoggerExtensions
 {
    private static readonly Stopwatch Stopwatch = new();
 

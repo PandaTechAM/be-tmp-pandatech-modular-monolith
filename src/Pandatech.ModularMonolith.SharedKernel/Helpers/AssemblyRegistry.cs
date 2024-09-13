@@ -4,17 +4,17 @@ namespace Pandatech.ModularMonolith.SharedKernel.Helpers;
 
 public static class AssemblyRegistry
 {
-   private static readonly List<Assembly> _assemblies = [];
+   private static readonly List<Assembly> Assemblies = [];
 
    public static void AddAssemblies(params Assembly[] assemblies)
    {
-      lock (_assemblies)
+      lock (Assemblies)
       {
          foreach (var assembly in assemblies)
          {
-            if (!_assemblies.Contains(assembly))
+            if (!Assemblies.Contains(assembly))
             {
-               _assemblies.Add(assembly);
+               Assemblies.Add(assembly);
             }
          }
       }
@@ -22,17 +22,17 @@ public static class AssemblyRegistry
 
    public static void RemoveAllAssemblies()
    {
-      lock (_assemblies)
+      lock (Assemblies)
       {
-         _assemblies.Clear();
+         Assemblies.Clear();
       }
    }
 
    public static IEnumerable<Assembly> GetAllAssemblies()
    {
-      lock (_assemblies)
+      lock (Assemblies)
       {
-         return _assemblies.ToArray();
+         return Assemblies.ToArray();
       }
    }
 }
