@@ -89,7 +89,8 @@ public static class HttpContextParser
          "X-Forwarded-Host",
          "X-Forwarded-Proto",
          "X-Forwarded-Server",
-         "X-Forwarded-Port"
+         "X-Forwarded-Port",
+         "CF-Connecting-IP"
       };
 
       var stringBuilder = new StringBuilder();
@@ -166,7 +167,7 @@ public static class HttpContextParser
 
    public static string TryParseUserNetworkAddress(this HttpContext httpContext)
    {
-      string[] headersToCheck = ["X-Forwarded-For", "Forwarded", "X-Real-IP"];
+      string[] headersToCheck = ["CF-Connecting-IP", "X-Forwarded-For", "Forwarded", "X-Real-IP"];
 
       foreach (var header in headersToCheck)
       {
