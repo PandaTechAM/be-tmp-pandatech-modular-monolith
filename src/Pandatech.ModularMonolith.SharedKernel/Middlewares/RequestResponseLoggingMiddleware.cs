@@ -31,14 +31,14 @@ public class RequestResponseLoggingMiddleware(RequestDelegate next, ILogger<Requ
       var originalBodyStream = context.Response.Body;
       await using var responseBody = new MemoryStream();
       context.Response.Body = responseBody;
-      var stopwatch = Stopwatch.StartNew();
+      var stopwatch = Stopwatch.GetTimestamp();
       try
       {
          await next(context);
       }
       finally
       {
-         stopwatch.Stop();
+         var delta = Stopwatch.GetElapsedTime(stopwatch).TotalMilliseconds;
          var responseLog = await CaptureResponseAsync(context.Response);
 
          logger.LogInformation(
@@ -46,7 +46,7 @@ public class RequestResponseLoggingMiddleware(RequestDelegate next, ILogger<Requ
             context.Request.Method,
             context.Request.QueryString,
             context.Response.StatusCode,
-            stopwatch.ElapsedMilliseconds,
+            delta,
             requestLog.Headers,
             requestLog.Body,
             responseLog.Headers,
