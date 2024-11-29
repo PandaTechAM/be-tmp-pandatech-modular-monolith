@@ -1,4 +1,4 @@
-using Pandatech.ModularMonolith.SharedKernel.Interfaces;
+using SharedKernel.ValidatorAndMediatR;
 
 namespace Pandatech.ModularMonolith.Mock2.Features;
 

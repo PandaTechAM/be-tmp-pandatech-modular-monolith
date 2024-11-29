@@ -6,8 +6,7 @@ using Pandatech.ModularMonolith.Mock2.Entities;
 
 namespace Pandatech.ModularMonolith.Mock2.Context;
 
-//dotnet ef migrations add --project src\Pandatech.ModularMonolith.Mock2\Pandatech.ModularMonolith.Mock2.csproj --context Pandatech.ModularMonolith.Mock2.Context.PostgresContext --configuration Debug --output-dir ./Context/Migrations
-public class PostgresContext(DbContextOptions<PostgresContext> options) : DbContext(options)
+public class Mock2Context(DbContextOptions<Mock2Context> options) : DbContext(options)
    , IOutboxDbContext, IInboxDbContext
 {
    public DbSet<TransactionEntity> Transactions { get; set; } = null!;

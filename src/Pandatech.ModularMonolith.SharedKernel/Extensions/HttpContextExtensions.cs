@@ -2,9 +2,9 @@ using System.Net;
 using System.Text;
 using Microsoft.AspNetCore.Http;
 
-namespace Pandatech.ModularMonolith.SharedKernel.Helpers;
+namespace Pandatech.ModularMonolith.SharedKernel.Extensions;
 
-public static class HttpContextParser
+public static class HttpContextExtensions
 {
    private const string DefaultIpAddress = "0.0.0.0";
    // public static string TryParseAccessTokenSignature(this HttpContext httpContext, IHostEnvironment environment)

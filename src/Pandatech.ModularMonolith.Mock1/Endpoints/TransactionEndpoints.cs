@@ -21,7 +21,7 @@ public class TransactionEndpoints : IEndpoint
       var groupApp = app
                      .MapGroup(RoutePrefix)
                      .WithTags(TagName)
-                     .WithGroupName(ApiHelper.GroupNameMain)
+                     .WithGroupName(ApiHelper.GroupNameModular)
                      .WithOpenApi();
 
       groupApp.MapPost("",

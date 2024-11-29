@@ -21,12 +21,12 @@ public static class ConfigurationExtensions
       var persistencePath = configuration.GetPersistentPath();
       return $"{persistencePath}/files";
    }
-   
+
    public static string GetRepositoryName(this IConfiguration configuration)
    {
       return configuration[RepositoryNameConfigurationPath]!;
    }
-   
+
    public static string GetPersistentPath(this IConfiguration configuration)
    {
       return configuration.GetConnectionString(PersistentConfigurationPath)!;

@@ -3,8 +3,9 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Pandatech.ModularMonolith.Mock1.Context;
 using Pandatech.ModularMonolith.Mock1.Helpers;
-using Pandatech.ModularMonolith.SharedKernel.Extensions;
-using Pandatech.ModularMonolith.SharedKernel.Helpers;
+using SharedKernel.Helpers;
+using SharedKernel.Logging;
+using SharedKernel.Postgres.Extensions;
 
 namespace Pandatech.ModularMonolith.Mock1;
 
@@ -12,12 +13,12 @@ public static class Mock1Extension
 {
    public static WebApplicationBuilder AddMock1Module(this WebApplicationBuilder builder)
    {
-      AssemblyRegistry.AddAssemblies(typeof(Mock1Extension).Assembly);
+      AssemblyRegistry.Add(typeof(Mock1Extension).Assembly);
 
 
-      builder.AddPostgresContext<PostgresContext>(
+      builder.AddPostgresContext<Mock1Context>(
          builder.Configuration.GetConnectionString(ConfigurationPaths.Postgres)!);
-      builder.Services.AddOutboxInboxServices<PostgresContext>();
+      builder.Services.AddOutboxInboxServices<Mock1Context>();
 
       builder.LogModuleRegistrationSuccess("Mock1");
       return builder;
@@ -27,7 +28,7 @@ public static class Mock1Extension
    {
       app.LogModuleUseSuccess("Mock1");
 
-      app.MigrateDatabase<PostgresContext>();
+      app.MigrateDatabase<Mock1Context>();
 
       return app;
    }

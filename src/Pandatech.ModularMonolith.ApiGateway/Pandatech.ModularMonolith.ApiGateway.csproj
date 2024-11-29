@@ -2,17 +2,18 @@
 
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.8">
-            <PrivateAssets>all</PrivateAssets>
-            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-        </PackageReference>
-        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.7.3" />
-    </ItemGroup>
-
-    <ItemGroup>
         <ProjectReference Include="..\Pandatech.ModularMonolith.Mock1\Pandatech.ModularMonolith.Mock1.csproj"/>
         <ProjectReference Include="..\Pandatech.ModularMonolith.Mock2\Pandatech.ModularMonolith.Mock2.csproj"/>
         <ProjectReference Include="..\Pandatech.ModularMonolith.Scheduler\Pandatech.ModularMonolith.Scheduler.csproj"/>
+    </ItemGroup>
+
+
+    <ItemGroup>
+        <_ContentIncludedByDefault Remove="wwwroot\assets\css\panda-style.css"/>
+        <_ContentIncludedByDefault Remove="wwwroot\assets\images\favicon.svg"/>
+        <_ContentIncludedByDefault Remove="wwwroot\assets\images\logo-wording.svg"/>
+        <_ContentIncludedByDefault Remove="wwwroot\assets\images\logo.svg"/>
+        <_ContentIncludedByDefault Remove="wwwroot\assets\js\docs.js"/>
     </ItemGroup>
 
 </Project>

@@ -6,8 +6,10 @@ using Pandatech.ModularMonolith.Scheduler.Extensions;
 using Pandatech.ModularMonolith.Scheduler.Helpers;
 using Pandatech.ModularMonolith.Scheduler.Integration;
 using Pandatech.ModularMonolith.Scheduler.Services;
-using Pandatech.ModularMonolith.SharedKernel.Extensions;
-using Pandatech.ModularMonolith.SharedKernel.Helpers;
+using SharedKernel.Extensions;
+using SharedKernel.Helpers;
+using SharedKernel.Logging;
+using SharedKernel.Postgres.Extensions;
 
 namespace Pandatech.ModularMonolith.Scheduler;
 
@@ -15,10 +17,10 @@ public static class SchedulerExtension
 {
    public static WebApplicationBuilder AddSchedulerModule(this WebApplicationBuilder builder)
    {
-      AssemblyRegistry.AddAssemblies(typeof(SchedulerExtension).Assembly);
+      AssemblyRegistry.Add(typeof(SchedulerExtension).Assembly);
 
       builder
-         .AddPostgresContext<PostgresContext>(builder.Configuration.GetConnectionString(ConfigurationPaths.Postgres)!)
+         .AddPostgresContext<SchedulerContext>(builder.Configuration.GetConnectionString(ConfigurationPaths.Postgres)!)
          .AddHangfireServer()
          .AddHealthChecks();
 
@@ -31,8 +33,9 @@ public static class SchedulerExtension
 
    public static WebApplication UseSchedulerModule(this WebApplication app)
    {
-      app.MigrateDatabase<PostgresContext>()
-         .RunHangfireDashboard();
+      app.UseHangfireServer()
+         .MigrateDatabase<SchedulerContext>();
+
 
       app.LogModuleUseSuccess("Scheduler");
       return app;

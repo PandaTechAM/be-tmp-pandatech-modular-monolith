@@ -1,16 +1,16 @@
 using Hangfire;
 using Hangfire.PostgreSql;
+using HangfireBasicAuthenticationFilter;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.Configuration;
-using Pandatech.ModularMonolith.Scheduler.Helpers;
+using Pandatech.ModularMonolith.SharedKernel.Extensions;
 
 namespace Pandatech.ModularMonolith.Scheduler.Extensions;
 
-public static class HangfireServerExtension
+public static class HangfireExtensions
 {
    public static WebApplicationBuilder AddHangfireServer(this WebApplicationBuilder builder)
    {
-      var postgresConnectionString = builder.Configuration.GetConnectionString(ConfigurationPaths.Postgres);
+      var postgresConnectionString = builder.Configuration.GetPostgresUrl();
       builder.Services.AddHangfire(configuration =>
       {
          configuration.SetDataCompatibilityLevel(CompatibilityLevel.Version_180);
@@ -19,10 +19,30 @@ public static class HangfireServerExtension
          configuration.UsePostgreSqlStorage(c => c.UseNpgsqlConnection(postgresConnectionString));
       });
 
-      builder.Services.AddHangfireServer(options =>
-      {
-         //options.WorkerCount = 10;
-      });
+      builder.Services.AddHangfireServer();
       return builder;
+   }
+
+   public static WebApplication UseHangfireServer(this WebApplication app)
+   {
+      var user = app.Configuration.GetHangfireUsername();
+      var pass = app.Configuration.GetHangfirePassword();
+
+      app.UseHangfireDashboard("/hangfire",
+         new DashboardOptions
+         {
+            DashboardTitle = "JobMaster Dashboard",
+            Authorization =
+            [
+               new HangfireCustomBasicAuthenticationFilter
+               {
+                  User = user,
+                  Pass = pass
+               }
+            ]
+         });
+      app.MapHangfireDashboard();
+
+      return app;
    }
 }

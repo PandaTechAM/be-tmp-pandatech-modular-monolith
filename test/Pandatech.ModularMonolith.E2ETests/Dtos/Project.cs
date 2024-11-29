@@ -1,6 +1,6 @@
 using System.Reflection;
 
-namespace FinHub.E2ETests.Dtos;
+namespace Pandatech.ModularMonolith.E2ETests.Dtos;
 
 public class Project(string groupName, ProjectType type, Assembly assembly)
 {

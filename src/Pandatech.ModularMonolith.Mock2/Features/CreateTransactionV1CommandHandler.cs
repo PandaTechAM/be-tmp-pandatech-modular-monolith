@@ -1,11 +1,11 @@
 using Pandatech.ModularMonolith.Mock2.Context;
 using Pandatech.ModularMonolith.Mock2.Entities;
-using Pandatech.ModularMonolith.SharedKernel.Interfaces;
 using ResponseCrafter.HttpExceptions;
+using SharedKernel.ValidatorAndMediatR;
 
 namespace Pandatech.ModularMonolith.Mock2.Features;
 
-public class CreateTransactionV1CommandHandler(PostgresContext postgresContext)
+public class CreateTransactionV1CommandHandler(Mock2Context mock2Context)
    : ICommandHandler<CreateTransactionV1Command>
 {
    public async Task Handle(CreateTransactionV1Command request, CancellationToken cancellationToken)
@@ -28,8 +28,8 @@ public class CreateTransactionV1CommandHandler(PostgresContext postgresContext)
          throw new InternalServerErrorException("I don't know what happened");
       }
 
-      postgresContext.Transactions.Add(transaction);
+      mock2Context.Transactions.Add(transaction);
 
-      await postgresContext.SaveChangesAsync(cancellationToken);
+      await mock2Context.SaveChangesAsync(cancellationToken);
    }
 }

@@ -1,4 +1,4 @@
-namespace FinHub.E2ETests;
+namespace Pandatech.ModularMonolith.E2ETests;
 
 public class UnitTest1
 {

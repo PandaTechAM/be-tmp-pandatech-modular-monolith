@@ -12,7 +12,7 @@ using Pandatech.ModularMonolith.Mock1.Context;
 
 namespace FinHub.Mock1.Context.Migrations
 {
-    [DbContext(typeof(PostgresContext))]
+    [DbContext(typeof(Mock1Context))]
     [Migration("20240326175802_Outbox")]
     partial class Outbox
     {

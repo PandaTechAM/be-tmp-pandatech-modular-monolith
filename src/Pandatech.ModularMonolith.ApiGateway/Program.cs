@@ -1,58 +1,56 @@
+using DistributedCache.Options;
 using FluentMinimalApiMapper;
+using Pandatech.Crypto.Extensions;
 using Pandatech.ModularMonolith.ApiGateway.Extensions;
 using Pandatech.ModularMonolith.SharedKernel.Extensions;
-using Pandatech.ModularMonolith.SharedKernel.Helpers;
-using Pandatech.ModularMonolith.SharedKernel.SharedEndpoints;
-using PandaVaultClient;
+using ResponseCrafter.Enums;
 using ResponseCrafter.Extensions;
+using SharedKernel.Extensions;
+using SharedKernel.Helpers;
+using SharedKernel.Logging;
+using SharedKernel.OpenApi;
+using SharedKernel.Resilience;
+using SharedKernel.ValidatorAndMediatR;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.LogStartAttempt();
-AssemblyRegistry.AddAssemblies(typeof(Program).Assembly);
-
-if (!builder.Environment.IsLocal())
-{
-   builder.Configuration.AddPandaVault();
-}
+AssemblyRegistry.Add(typeof(Program).Assembly);
 
 builder
-   .AddResponseCrafter()
+   .ConfigureWithPandaVault()
    .AddSerilog()
+   .AddResponseCrafter(NamingConvention.ToSnakeCase)
+   .AddOpenApi()
+   .AddOpenTelemetry()
    .RegisterModules()
-   .AddCors()
-   .AddSwagger()
-   .AddPandaCryptoAndFilters()
-   .AddSharedHealthChecks()
+   .AddMinimalApis(AssemblyRegistry.ToArray())
+   .AddControllers(AssemblyRegistry.ToArray())
+   .AddMediatrWithBehaviors(AssemblyRegistry.ToArray())
+   .AddMassTransit(AssemblyRegistry.ToArray())
    .AddResilienceDefaultPipeline()
-   .AddMassTransit(AssemblyRegistry.GetAllAssemblies()
-                                   .ToArray())
-   .ConfigureOpenTelemetry();
-
-builder.Services
-       .AddSwaggerGen()
-       .AddEndpointsApiExplorer();
+   .AddRedis(KeyPrefix.AssemblyNamePrefix)
+   .AddDistributedSignalR("DistributedSignalR")
+   .MapDefaultTimeZone()
+   .AddCors()
+   .AddAes256Key(builder.Configuration.GetAesKey())
+   .AddHealthChecks();
 
 
 var app = builder.Build();
-
-app.UseStaticFiles();
 
 app
    .UseRequestResponseLogging()
    .UseResponseCrafter()
    .UseCors()
+   .MapMinimalApis()
+   .MapHealthCheckEndpoints()
+   .MapPrometheusExporterEndpoints()
    .UseModules()
    .EnsureHealthy()
-   .UseSwagger(app.Configuration);
-
-app.MapPandaEndpoints();
-app.MapEndpoints();
+   .ClearAssemblyRegistry()
+   .UseOpenApi()
+   .MapControllers();
 
 app.LogStartSuccess();
 app.Run();
-
-namespace Pandatech.ModularMonolith.ApiGateway
-{
-   public class Program;
-}

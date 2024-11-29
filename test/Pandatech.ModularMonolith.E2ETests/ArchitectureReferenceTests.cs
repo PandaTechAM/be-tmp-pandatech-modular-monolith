@@ -1,36 +1,34 @@
-using FinHub.E2ETests.Dtos;
 using NetArchTest.Rules;
-using Pandatech.ModularMonolith.ApiGateway;
+using Pandatech.ModularMonolith.E2ETests.Dtos;
 using Pandatech.ModularMonolith.Mock1;
-using Pandatech.ModularMonolith.Mock1.Integration;
 using Pandatech.ModularMonolith.Mock2;
 using Pandatech.ModularMonolith.Scheduler;
 
-namespace FinHub.E2ETests;
+namespace Pandatech.ModularMonolith.E2ETests;
 
 public class ArchitectureReferenceTests
 {
    private static readonly List<Project> Projects =
    [
-      new Project("Mock1", ProjectType.Module, typeof(Mock1Extension).Assembly),
-      new Project("Mock1Integration",
+      new("Mock1", ProjectType.Module, typeof(Mock1Extension).Assembly),
+      new("Mock1Integration",
          ProjectType.ModuleIntegration,
          typeof(AssemblyReference).Assembly),
 
-      new Project("Mock2", ProjectType.Module, typeof(Mock2Extension).Assembly),
-      new Project("Mock2Integration",
+      new("Mock2", ProjectType.Module, typeof(Mock2Extension).Assembly),
+      new("Mock2Integration",
          ProjectType.ModuleIntegration,
-         typeof(Pandatech.ModularMonolith.Mock2.Integration.AssemblyReference).Assembly),
+         typeof(Mock2.Integration.AssemblyReference).Assembly),
 
-      new Project("Scheduler", ProjectType.Module, typeof(SchedulerExtension).Assembly),
-      new Project("SchedulerIntegration",
+      new("Scheduler", ProjectType.Module, typeof(SchedulerExtension).Assembly),
+      new("SchedulerIntegration",
          ProjectType.ModuleIntegration,
-         typeof(Pandatech.ModularMonolith.Scheduler.Integration.AssemblyReference).Assembly),
+         typeof(Scheduler.Integration.AssemblyReference).Assembly),
 
-      new Project("ApiGateway", ProjectType.ApiGateway, typeof(Program).Assembly),
-      new Project("SharedKernel",
+      new("ApiGateway", ProjectType.ApiGateway, typeof(ApiGateway.AssemblyReference).Assembly),
+      new("SharedKernel",
          ProjectType.SharedKernel,
-         typeof(Pandatech.ModularMonolith.SharedKernel.AssemblyReference).Assembly)
+         typeof(SharedKernel.AssemblyReference).Assembly)
    ];
 
    [Fact]

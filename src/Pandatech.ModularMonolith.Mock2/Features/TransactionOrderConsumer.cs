@@ -7,7 +7,7 @@ using Pandatech.ModularMonolith.Mock2.Context;
 namespace Pandatech.ModularMonolith.Mock2.Features;
 
 public class TransactionOrderConsumer(ISender sender, IServiceScopeFactory serviceScopeFactory)
-   : InboxConsumer<TransactionOrderCreatedEvent, PostgresContext>(serviceScopeFactory)
+   : InboxConsumer<TransactionOrderCreatedEvent, Mock2Context>(serviceScopeFactory)
 {
    protected override async Task Consume(TransactionOrderCreatedEvent message)
    {

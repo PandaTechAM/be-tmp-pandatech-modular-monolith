@@ -7,7 +7,7 @@ using Pandatech.ModularMonolith.Mock1.Entities;
 namespace Pandatech.ModularMonolith.Mock1.Context;
 
 //dotnet ef migrations add --project src\Pandatech.ModularMonolith.Mock1\Pandatech.ModularMonolith.Mock1.csproj --context Pandatech.ModularMonolith.Mock1.Context.PostgresContext --configuration Debug --output-dir ./Context/Migrations
-public class PostgresContext(DbContextOptions<PostgresContext> options) : DbContext(options)
+public class Mock1Context(DbContextOptions<Mock1Context> options) : DbContext(options)
    , IOutboxDbContext, IInboxDbContext
 {
    public DbSet<TransactionOrderEntity> TransactionOrders { get; set; } = null!;

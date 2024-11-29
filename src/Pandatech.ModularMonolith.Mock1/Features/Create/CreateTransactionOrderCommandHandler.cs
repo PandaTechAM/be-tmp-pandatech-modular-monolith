@@ -4,11 +4,11 @@ using Pandatech.ModularMonolith.Mock1.Context;
 using Pandatech.ModularMonolith.Mock1.Entities;
 using Pandatech.ModularMonolith.Mock1.Enums;
 using Pandatech.ModularMonolith.Mock1.Integration;
-using Pandatech.ModularMonolith.SharedKernel.Interfaces;
+using SharedKernel.ValidatorAndMediatR;
 
 namespace Pandatech.ModularMonolith.Mock1.Features.Create;
 
-public class CreateTransactionOrderCommandHandler(PostgresContext postgresContext, IPublishEndpoint publishEndpoint)
+public class CreateTransactionOrderCommandHandler(Mock1Context mock1Context, IPublishEndpoint publishEndpoint)
    : ICommandHandler<CreateTransactionOrderCommand>
 {
    public async Task Handle(CreateTransactionOrderCommand request, CancellationToken cancellationToken)
@@ -21,15 +21,15 @@ public class CreateTransactionOrderCommandHandler(PostgresContext postgresContex
          Narrative = "null"
       };
 
-      postgresContext.TransactionOrders.Add(transaction);
+      mock1Context.TransactionOrders.Add(transaction);
 
       var transactionOrderEvent = new TransactionOrderCreatedEvent(transaction.Id,
          transaction.UserId,
          transaction.Amount,
          transaction.Narrative);
 
-      postgresContext.AddToOutbox(transactionOrderEvent);
+      mock1Context.AddToOutbox(transactionOrderEvent);
 
-      await postgresContext.SaveChangesAsync(cancellationToken);
+      await mock1Context.SaveChangesAsync(cancellationToken);
    }
 }

@@ -4,23 +4,23 @@ using MassTransit;
 using Microsoft.EntityFrameworkCore;
 using Pandatech.ModularMonolith.Mock1.Context;
 using Pandatech.ModularMonolith.Mock1.Enums;
-using Pandatech.ModularMonolith.SharedKernel.Interfaces;
+using SharedKernel.ValidatorAndMediatR;
 
 namespace Pandatech.ModularMonolith.Mock1.Features.Update;
 
-internal class UpdateTransactionOrderCommandHandler(PostgresContext postgresContext, IPublishEndpoint bus)
+internal class UpdateTransactionOrderCommandHandler(Mock1Context mock1Context, IPublishEndpoint bus)
    : ICommandHandler<UpdateTransactionOrderCommand>
 {
    public async Task Handle(UpdateTransactionOrderCommand request, CancellationToken cancellationToken)
    {
       using var transactionScope =
-         await postgresContext.Database.BeginTransactionAsync(IsolationLevel.ReadCommitted, cancellationToken);
+         await mock1Context.Database.BeginTransactionAsync(IsolationLevel.ReadCommitted, cancellationToken);
 
       try
       {
-         var order = await postgresContext.TransactionOrders
-                                          .ForUpdate()
-                                          .FirstOrDefaultAsync(x => x.Id == request.Id, cancellationToken);
+         var order = await mock1Context.TransactionOrders
+                                       .ForUpdate()
+                                       .FirstOrDefaultAsync(x => x.Id == request.Id, cancellationToken);
          if (order != null)
          {
             order.Status = Status.Processing;

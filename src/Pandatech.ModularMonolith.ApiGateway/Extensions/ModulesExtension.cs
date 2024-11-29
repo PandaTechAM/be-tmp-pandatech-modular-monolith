@@ -1,9 +1,6 @@
-using FluentMinimalApiMapper;
 using Pandatech.ModularMonolith.Mock1;
 using Pandatech.ModularMonolith.Mock2;
 using Pandatech.ModularMonolith.Scheduler;
-using Pandatech.ModularMonolith.SharedKernel.Extensions;
-using Pandatech.ModularMonolith.SharedKernel.Helpers;
 
 namespace Pandatech.ModularMonolith.ApiGateway.Extensions;
 
@@ -18,13 +15,6 @@ public static class ModulesExtension
       }
 
       builder.AddSchedulerModule();
-
-      var assemblies = AssemblyRegistry.GetAllAssemblies()
-                                       .ToList();
-      builder
-         .AddEndpoints(assemblies) //After modules always
-         .AddMediatrWithBehaviors(assemblies); //After modules always
-
       return builder;
    }
 

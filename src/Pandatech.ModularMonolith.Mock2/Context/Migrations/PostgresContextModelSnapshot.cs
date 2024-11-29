@@ -11,7 +11,7 @@ using Pandatech.ModularMonolith.Mock2.Context;
 
 namespace FinHub.Mock2.Context.Migrations
 {
-    [DbContext(typeof(PostgresContext))]
+    [DbContext(typeof(Mock2Context))]
     partial class PostgresContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
