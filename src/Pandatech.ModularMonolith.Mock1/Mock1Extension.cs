@@ -16,7 +16,7 @@ public static class Mock1Extension
       AssemblyRegistry.Add(typeof(Mock1Extension).Assembly);
 
 
-      builder.AddPostgresContext<Mock1Context>(
+      builder.AddPostgresContextPool<Mock1Context>(
          builder.Configuration.GetConnectionString(ConfigurationPaths.Postgres)!);
       builder.Services.AddOutboxInboxServices<Mock1Context>();
 

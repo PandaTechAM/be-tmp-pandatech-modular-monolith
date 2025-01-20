@@ -20,7 +20,7 @@ public static class SchedulerExtension
       AssemblyRegistry.Add(typeof(SchedulerExtension).Assembly);
 
       builder
-         .AddPostgresContext<SchedulerContext>(builder.Configuration.GetConnectionString(ConfigurationPaths.Postgres)!)
+         .AddPostgresContextPool<SchedulerContext>(builder.Configuration.GetConnectionString(ConfigurationPaths.Postgres)!)
          .AddHangfireServer()
          .AddHealthChecks();
 
