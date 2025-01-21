@@ -19,6 +19,7 @@ AssemblyRegistry.Add(typeof(Program).Assembly);
 
 builder
    .ConfigureWithPandaVault()
+   .AddOutboundLoggingHandler()
    .AddSerilog()
    .AddResponseCrafter(NamingConvention.ToSnakeCase)
    .AddOpenApi()
@@ -40,7 +41,7 @@ builder
 var app = builder.Build();
 
 app
-   .UseRequestResponseLogging()
+   .UseRequestLogging()
    .UseResponseCrafter()
    .UseCors()
    .MapMinimalApis()
