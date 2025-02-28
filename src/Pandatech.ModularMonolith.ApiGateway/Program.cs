@@ -1,3 +1,4 @@
+using DistributedCache.Extensions;
 using DistributedCache.Options;
 using FluentMinimalApiMapper;
 using Pandatech.Crypto.Extensions;
@@ -17,6 +18,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.LogStartAttempt();
 AssemblyRegistry.Add(typeof(Program).Assembly);
 
+var repoName = builder.Environment.GetShortEnvironmentName() + ":" + builder.Configuration.GetRepositoryName();
+
 builder
    .ConfigureWithPandaVault()
    .AddOutboundLoggingHandler()
@@ -30,8 +33,12 @@ builder
    .AddMediatrWithBehaviors(AssemblyRegistry.ToArray())
    .AddMassTransit(AssemblyRegistry.ToArray())
    .AddResilienceDefaultPipeline()
-   .AddRedis(KeyPrefix.AssemblyNamePrefix)
-   .AddDistributedSignalR("DistributedSignalR")
+   .AddDistributedCache(o =>
+   {
+      o.RedisConnectionString = builder.Configuration.GetRedisUrl();
+      o.ChannelPrefix = repoName;
+   })
+   .AddDistributedSignalR(builder.Configuration.GetRedisUrl(), repoName + ":SignalR")
    .MapDefaultTimeZone()
    .AddCors()
    .AddAes256Key(builder.Configuration.GetAesKey())
