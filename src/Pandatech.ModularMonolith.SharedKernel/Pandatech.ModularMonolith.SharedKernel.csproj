@@ -2,10 +2,10 @@
 
 
     <ItemGroup>
-        <PackageReference Include="MassTransit.RabbitMQ" Version="8.3.7" />
-        <PackageReference Include="Pandatech.MassTransit.PostgresOutbox" Version="2.0.3" />
-        <PackageReference Include="Pandatech.SharedKernel" Version="1.2.13" />
-        <PackageReference Include="Pandatech.SharedKernel.Postgres" Version="1.0.21" />
+        <PackageReference Include="MassTransit.RabbitMQ" Version="8.5.2" />
+        <PackageReference Include="Pandatech.MassTransit.PostgresOutbox" Version="3.0.2" />
+        <PackageReference Include="Pandatech.SharedKernel" Version="1.6.4" />
+        <PackageReference Include="Pandatech.SharedKernel.Postgres" Version="1.0.33" />
     </ItemGroup>
 
 

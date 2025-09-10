@@ -9,6 +9,7 @@ using ResponseCrafter.Extensions;
 using SharedKernel.Extensions;
 using SharedKernel.Helpers;
 using SharedKernel.Logging;
+using SharedKernel.Logging.Middleware;
 using SharedKernel.OpenApi;
 using SharedKernel.Resilience;
 using SharedKernel.ValidatorAndMediatR;
@@ -18,12 +19,14 @@ var builder = WebApplication.CreateBuilder(args);
 builder.LogStartAttempt();
 AssemblyRegistry.Add(typeof(Program).Assembly);
 
+builder.WebHost.UseKestrel(o => o.AddServerHeader = false);
+
 var repoName = builder.Environment.GetShortEnvironmentName() + ":" + builder.Configuration.GetRepositoryName();
 
 builder
    .ConfigureWithPandaVault()
    .AddOutboundLoggingHandler()
-   .AddSerilog()
+   .AddSerilog(LogBackend.ElasticSearch)
    .AddResponseCrafter(NamingConvention.ToSnakeCase)
    .AddOpenApi()
    .AddOpenTelemetry()
