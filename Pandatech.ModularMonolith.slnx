@@ -1,0 +1,34 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+    <File Path=".gitignore" />
+    <File Path="Directory.Build.props" />
+    <File Path="docker-compose.yml" />
+    <File Path="Dockerfile" />
+    <File Path="Dockerfile.Local" />
+    <File Path="global.json" />
+    <File Path="nuget.config" />
+    <File Path="Readme.md" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/Pandatech.ModularMonolith.ApiGateway/Pandatech.ModularMonolith.ApiGateway.csproj" />
+    <Project Path="src/Pandatech.ModularMonolith.SharedKernel/Pandatech.ModularMonolith.SharedKernel.csproj" />
+  </Folder>
+  <Folder Name="/src/Modules/" />
+  <Folder Name="/src/Modules/Mock1/">
+    <Project Path="src/Pandatech.ModularMonolith.Mock1.Integration/Pandatech.ModularMonolith.Mock1.Integration.csproj" />
+    <Project Path="src/Pandatech.ModularMonolith.Mock1/Pandatech.ModularMonolith.Mock1.csproj" />
+  </Folder>
+  <Folder Name="/src/Modules/Mock2/">
+    <Project Path="src/Pandatech.ModularMonolith.Mock2.Integration/Pandatech.ModularMonolith.Mock2.Integration.csproj" />
+    <Project Path="src/Pandatech.ModularMonolith.Mock2/Pandatech.ModularMonolith.Mock2.csproj" />
+  </Folder>
+  <Folder Name="/src/Modules/Notification/" />
+  <Folder Name="/src/Modules/Scheduler/">
+    <Project Path="src/Pandatech.ModularMonolith.Scheduler.Integration/Pandatech.ModularMonolith.Scheduler.Integration.csproj" />
+    <Project Path="src/Pandatech.ModularMonolith.Scheduler/Pandatech.ModularMonolith.Scheduler.csproj" />
+  </Folder>
+  <Folder Name="/test/">
+    <Project Path="test/Pandatech.ModularMonolith.E2ETests/Pandatech.ModularMonolith.E2ETests.csproj" />
+  </Folder>
+</Solution>

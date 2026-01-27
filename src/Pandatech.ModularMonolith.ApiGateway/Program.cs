@@ -1,5 +1,4 @@
 using DistributedCache.Extensions;
-using DistributedCache.Options;
 using FluentMinimalApiMapper;
 using Pandatech.Crypto.Extensions;
 using Pandatech.ModularMonolith.ApiGateway.Extensions;
@@ -50,11 +49,13 @@ builder
 
 var app = builder.Build();
 
+var groupPolicy = app.MapGroup("")
+                     .DisableAntiforgery();
 app
    .UseRequestLogging()
    .UseResponseCrafter()
    .UseCors()
-   .MapMinimalApis()
+   .MapMinimalApis(groupPolicy)
    .MapHealthCheckEndpoints()
    .MapPrometheusExporterEndpoints()
    .UseModules()
