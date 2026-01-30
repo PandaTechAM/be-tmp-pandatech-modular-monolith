@@ -1,4 +1,5 @@
 using DistributedCache.Extensions;
+using FileExporter.Extensions;
 using FluentMinimalApiMapper;
 using Pandatech.Crypto.Extensions;
 using Pandatech.ModularMonolith.ApiGateway.Extensions;
@@ -34,6 +35,7 @@ builder
    .AddControllers(AssemblyRegistry.ToArray())
    .AddMediatrWithBehaviors(AssemblyRegistry.ToArray())
    .AddMassTransit(AssemblyRegistry.ToArray())
+   .AddFileExporter(AssemblyRegistry.ToArray())
    .AddResilienceDefaultPipeline()
    .AddDistributedCache(o =>
    {
