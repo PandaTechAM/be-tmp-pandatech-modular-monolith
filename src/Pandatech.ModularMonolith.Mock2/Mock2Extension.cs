@@ -11,23 +11,23 @@ namespace Pandatech.ModularMonolith.Mock2;
 
 public static class Mock2Extension
 {
-   public static WebApplicationBuilder AddMock2Module(this WebApplicationBuilder builder)
-   {
-      AssemblyRegistry.Add(typeof(Mock2Extension).Assembly);
+    public static WebApplicationBuilder AddMock2Module(this WebApplicationBuilder builder)
+    {
+        AssemblyRegistry.Add(typeof(Mock2Extension).Assembly);
 
 
-      builder.AddPostgresContextPool<Mock2Context>(
-         builder.Configuration.GetConnectionString(ConfigurationPaths.Postgres)!);
-      builder.Services.AddOutboxInboxServices<Mock2Context>();
+        builder.AddPostgresContextPool<Mock2Context>(
+            builder.Configuration.GetConnectionString(ConfigurationPaths.Postgres)!);
+        builder.Services.AddOutboxInboxServices<Mock2Context>();
 
-      builder.LogModuleRegistrationSuccess("Mock2");
-      return builder;
-   }
+        builder.LogModuleRegistrationSuccess("Mock2");
+        return builder;
+    }
 
-   public static WebApplication UseMock2Module(this WebApplication app)
-   {
-      app.MigrateDatabase<Mock2Context>();
-      app.LogModuleUseSuccess("Mock2");
-      return app;
-   }
+    public static WebApplication UseMock2Module(this WebApplication app)
+    {
+        app.MigrateDatabase<Mock2Context>();
+        app.LogModuleUseSuccess("Mock2");
+        return app;
+    }
 }

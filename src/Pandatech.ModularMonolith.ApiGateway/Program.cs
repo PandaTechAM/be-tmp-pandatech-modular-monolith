@@ -24,47 +24,47 @@ builder.WebHost.UseKestrel(o => o.AddServerHeader = false);
 var repoName = builder.Environment.GetShortEnvironmentName() + ":" + builder.Configuration.GetRepositoryName();
 
 builder
-   .ConfigureWithPandaVault()
-   .AddOutboundLoggingHandler()
-   .AddSerilog(LogBackend.ElasticSearch)
-   .AddResponseCrafter(NamingConvention.ToSnakeCase)
-   .AddOpenApi()
-   .AddOpenTelemetry()
-   .RegisterModules()
-   .AddMinimalApis(AssemblyRegistry.ToArray())
-   .AddControllers(AssemblyRegistry.ToArray())
-   .AddMediatrWithBehaviors(AssemblyRegistry.ToArray())
-   .AddMassTransit(AssemblyRegistry.ToArray())
-   .AddFileExporter(AssemblyRegistry.ToArray())
-   .AddResilienceDefaultPipeline()
-   .AddDistributedCache(o =>
-   {
-      o.RedisConnectionString = builder.Configuration.GetRedisUrl();
-      o.ChannelPrefix = repoName;
-   })
-   .AddDistributedSignalR(builder.Configuration.GetRedisUrl(), repoName + ":SignalR")
-   .MapDefaultTimeZone()
-   .AddCors()
-   .AddAes256Key(builder.Configuration.GetAesKey())
-   .AddHealthChecks();
+    .ConfigureWithPandaVault()
+    .AddOutboundLoggingHandler()
+    .AddSerilog(LogBackend.ElasticSearch)
+    .AddResponseCrafter(NamingConvention.ToSnakeCase)
+    .AddOpenApi()
+    .AddOpenTelemetry()
+    .RegisterModules()
+    .AddMinimalApis(AssemblyRegistry.ToArray())
+    .AddControllers(AssemblyRegistry.ToArray())
+    .AddMediatrWithBehaviors(AssemblyRegistry.ToArray())
+    .AddMassTransit(AssemblyRegistry.ToArray())
+    .AddFileExporter(AssemblyRegistry.ToArray())
+    .AddResilienceDefaultPipeline()
+    .AddDistributedCache(o =>
+    {
+        o.RedisConnectionString = builder.Configuration.GetRedisUrl();
+        o.ChannelPrefix = repoName;
+    })
+    .AddDistributedSignalR(builder.Configuration.GetRedisUrl(), repoName + ":SignalR")
+    .MapDefaultTimeZone()
+    .AddCors()
+    .AddAes256Key(builder.Configuration.GetAesKey())
+    .AddHealthChecks();
 
 
 var app = builder.Build();
 
 var groupPolicy = app.MapGroup("")
-                     .DisableAntiforgery();
+    .DisableAntiforgery();
 app
-   .UseRequestLogging()
-   .UseResponseCrafter()
-   .UseCors()
-   .MapMinimalApis(groupPolicy)
-   .MapHealthCheckEndpoints()
-   .MapPrometheusExporterEndpoints()
-   .UseModules()
-   .EnsureHealthy()
-   .ClearAssemblyRegistry()
-   .UseOpenApi()
-   .MapControllers();
+    .UseRequestLogging()
+    .UseResponseCrafter()
+    .UseCors()
+    .MapMinimalApis(groupPolicy)
+    .MapHealthCheckEndpoints()
+    .MapPrometheusExporterEndpoints()
+    .UseModules()
+    .EnsureHealthy()
+    .ClearAssemblyRegistry()
+    .UseOpenApi()
+    .MapControllers();
 
 app.LogStartSuccess();
 app.Run();

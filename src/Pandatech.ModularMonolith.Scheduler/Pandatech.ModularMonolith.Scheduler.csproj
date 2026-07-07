@@ -1,15 +1,22 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-    <ItemGroup>
-        <PackageReference Include="Hangfire" Version="1.8.22" />
-        <PackageReference Include="Hangfire.Dashboard.Basic.Authentication" Version="8.0.0" />
-        <PackageReference Include="Hangfire.EntityFrameworkCore" Version="0.9.0" />
-        <PackageReference Include="Hangfire.PostgreSql" Version="1.20.13" />
-    </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Hangfire" Version="1.8.23"/>
+    <PackageReference Include="Hangfire.Dashboard.Basic.Authentication" Version="8.0.0"/>
+    <PackageReference Include="Hangfire.EntityFrameworkCore" Version="0.9.0"/>
+    <PackageReference Include="Hangfire.PostgreSql" Version="1.21.1"/>
+    <!-- TEMPORARY: overrides the vulnerable Newtonsoft.Json 11.0.1 (NU1903 / GHSA-5crp-9r3c-p9vr)
+         pulled in transitively via Hangfire.Core. 13.0.4 is the latest patched version (the fix
+         landed in 13.0.1; there is no patched 11.x). Delete this explicit pin once Hangfire.Core
+         ships a reference to a patched Newtonsoft.Json on its own, so we no longer need to specify
+         it here. Do NOT let IDE "remove redundant reference" cleanup strip it while the transitive
+         is still 11.0.1. -->
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.4"/>
+  </ItemGroup>
 
-    <ItemGroup>
-        <ProjectReference Include="..\Pandatech.ModularMonolith.Scheduler.Integration\Pandatech.ModularMonolith.Scheduler.Integration.csproj"/>
-        <ProjectReference Include="..\Pandatech.ModularMonolith.SharedKernel\Pandatech.ModularMonolith.SharedKernel.csproj"/>
-    </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Pandatech.ModularMonolith.Scheduler.Integration\Pandatech.ModularMonolith.Scheduler.Integration.csproj"/>
+    <ProjectReference Include="..\Pandatech.ModularMonolith.SharedKernel\Pandatech.ModularMonolith.SharedKernel.csproj"/>
+  </ItemGroup>
 
 </Project>

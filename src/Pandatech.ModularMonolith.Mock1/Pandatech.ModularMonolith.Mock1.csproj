@@ -1,16 +1,16 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 
-    <ItemGroup>
-        <ProjectReference Include="..\Pandatech.ModularMonolith.Mock1.Integration\Pandatech.ModularMonolith.Mock1.Integration.csproj"/>
-        <ProjectReference Include="..\Pandatech.ModularMonolith.Scheduler.Integration\Pandatech.ModularMonolith.Scheduler.Integration.csproj"/>
-    </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Pandatech.ModularMonolith.Mock1.Integration\Pandatech.ModularMonolith.Mock1.Integration.csproj"/>
+    <ProjectReference Include="..\Pandatech.ModularMonolith.Scheduler.Integration\Pandatech.ModularMonolith.Scheduler.Integration.csproj"/>
+  </ItemGroup>
 
-    <ItemGroup>
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="10.0.2">
-            <PrivateAssets>all</PrivateAssets>
-            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-        </PackageReference>
-    </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="10.0.9">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
 
 </Project>

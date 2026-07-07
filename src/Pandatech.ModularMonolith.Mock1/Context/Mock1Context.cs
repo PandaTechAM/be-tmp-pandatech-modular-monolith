@@ -8,17 +8,17 @@ namespace Pandatech.ModularMonolith.Mock1.Context;
 
 //dotnet ef migrations add --project src\Pandatech.ModularMonolith.Mock1\Pandatech.ModularMonolith.Mock1.csproj --context Pandatech.ModularMonolith.Mock1.Context.PostgresContext --configuration Debug --output-dir ./Context/Migrations
 public class Mock1Context(DbContextOptions<Mock1Context> options) : DbContext(options)
-   , IOutboxDbContext, IInboxDbContext
+    , IOutboxDbContext, IInboxDbContext
 {
-   public DbSet<TransactionOrderEntity> TransactionOrders { get; set; } = null!;
-   public DbSet<InboxMessage> InboxMessages { get; set; }
-   public DbSet<OutboxMessage> OutboxMessages { get; set; }
+    public DbSet<TransactionOrderEntity> TransactionOrders { get; set; } = null!;
+    public DbSet<InboxMessage> InboxMessages { get; set; }
+    public DbSet<OutboxMessage> OutboxMessages { get; set; }
 
-   protected override void OnModelCreating(ModelBuilder modelBuilder)
-   {
-      base.OnModelCreating(modelBuilder);
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        base.OnModelCreating(modelBuilder);
 
-      modelBuilder.ApplyConfigurationsFromAssembly(typeof(Mock1Extension).Assembly);
-      modelBuilder.ConfigureInboxOutboxEntities();
-   }
+        modelBuilder.ApplyConfigurationsFromAssembly(typeof(Mock1Extension).Assembly);
+        modelBuilder.ConfigureInboxOutboxEntities();
+    }
 }

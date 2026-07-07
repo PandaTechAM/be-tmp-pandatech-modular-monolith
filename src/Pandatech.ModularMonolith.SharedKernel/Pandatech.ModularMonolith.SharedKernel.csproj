@@ -1,12 +1,20 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 
-    <ItemGroup>
-        <PackageReference Include="MassTransit.RabbitMQ" Version="[8.5.7]" />
-        <PackageReference Include="Pandatech.MassTransit.PostgresOutbox" Version="4.1.0" />
-        <PackageReference Include="Pandatech.SharedKernel" Version="2.1.1" />
-        <PackageReference Include="Pandatech.SharedKernel.Postgres" Version="2.0.2" />
-    </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="MassTransit.RabbitMQ" Version="[8.5.10]"/>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.9"/>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="10.0.9"/>
+    <!-- TEMPORARY: overrides the vulnerable Microsoft.OpenApi 2.0.0 (NU1903 / GHSA-v5pm-xwqc-g5wc)
+         pulled in transitively via Pandatech.SharedKernel. 2.9.0 is the latest patched 2.x. Delete
+         this explicit pin once the upstream chain resolves a patched Microsoft.OpenApi on its own, so
+         we no longer need to specify it here. Do NOT let IDE "remove redundant reference" cleanup
+         strip it while the transitive is still 2.0.0. -->
+    <PackageReference Include="Microsoft.OpenApi" Version="3.8.0"/>
+    <PackageReference Include="Pandatech.MassTransit.PostgresOutbox" Version="7.1.1"/>
+    <PackageReference Include="Pandatech.SharedKernel" Version="2.4.1"/>
+    <PackageReference Include="Pandatech.SharedKernel.Postgres" Version="2.1.6"/>
+  </ItemGroup>
 
 
 </Project>

@@ -6,30 +6,30 @@ using SharedKernel.ValidatorAndMediatR;
 namespace Pandatech.ModularMonolith.Mock2.Features;
 
 public class CreateTransactionV1CommandHandler(Mock2Context mock2Context)
-   : ICommandHandler<CreateTransactionV1Command>
+    : ICommandHandler<CreateTransactionV1Command>
 {
-   public async Task Handle(CreateTransactionV1Command request, CancellationToken cancellationToken)
-   {
-      var transaction = new TransactionEntity
-      {
-         TransactionOrderId = request.TransactionOrderId,
-         UserId = request.UserId,
-         Amount = request.Amount,
-         Narrative = request.Narrative
-      };
+    public async Task Handle(CreateTransactionV1Command request, CancellationToken cancellationToken)
+    {
+        var transaction = new TransactionEntity
+        {
+            TransactionOrderId = request.TransactionOrderId,
+            UserId = request.UserId,
+            Amount = request.Amount,
+            Narrative = request.Narrative
+        };
 
-      await Task.Delay(TimeSpan.FromSeconds(1), cancellationToken);
+        await Task.Delay(TimeSpan.FromSeconds(1), cancellationToken);
 
-      Console.WriteLine(
-         "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+        Console.WriteLine(
+            "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
 
-      if (transaction.TransactionOrderId == 13)
-      {
-         throw new InternalServerErrorException("I don't know what happened");
-      }
+        if (transaction.TransactionOrderId == 13)
+        {
+            throw new InternalServerErrorException("I don't know what happened");
+        }
 
-      mock2Context.Transactions.Add(transaction);
+        mock2Context.Transactions.Add(transaction);
 
-      await mock2Context.SaveChangesAsync(cancellationToken);
-   }
+        await mock2Context.SaveChangesAsync(cancellationToken);
+    }
 }

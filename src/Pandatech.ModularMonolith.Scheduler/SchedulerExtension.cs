@@ -15,29 +15,30 @@ namespace Pandatech.ModularMonolith.Scheduler;
 
 public static class SchedulerExtension
 {
-   public static WebApplicationBuilder AddSchedulerModule(this WebApplicationBuilder builder)
-   {
-      AssemblyRegistry.Add(typeof(SchedulerExtension).Assembly);
+    public static WebApplicationBuilder AddSchedulerModule(this WebApplicationBuilder builder)
+    {
+        AssemblyRegistry.Add(typeof(SchedulerExtension).Assembly);
 
-      builder
-         .AddPostgresContextPool<SchedulerContext>(builder.Configuration.GetConnectionString(ConfigurationPaths.Postgres)!)
-         .AddHangfireServer()
-         .AddHealthChecks();
+        builder
+            .AddPostgresContextPool<SchedulerContext>(
+                builder.Configuration.GetConnectionString(ConfigurationPaths.Postgres)!)
+            .AddHangfireServer()
+            .AddHealthChecks();
 
-      builder.Services.AddSingleton<IBackgroundJob, BackgroundJob>();
+        builder.Services.AddSingleton<IBackgroundJob, BackgroundJob>();
 
-      builder.LogModuleRegistrationSuccess("Scheduler");
+        builder.LogModuleRegistrationSuccess("Scheduler");
 
-      return builder;
-   }
+        return builder;
+    }
 
-   public static WebApplication UseSchedulerModule(this WebApplication app)
-   {
-      app.UseHangfireServer()
-         .MigrateDatabase<SchedulerContext>();
+    public static WebApplication UseSchedulerModule(this WebApplication app)
+    {
+        app.UseHangfireServer()
+            .MigrateDatabase<SchedulerContext>();
 
 
-      app.LogModuleUseSuccess("Scheduler");
-      return app;
-   }
+        app.LogModuleUseSuccess("Scheduler");
+        return app;
+    }
 }
